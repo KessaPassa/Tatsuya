@@ -7,9 +7,10 @@
         NowDateTextBox.Text = Date.Now.ToString("yyyy/MM/dd (ddd)")
     End Sub
 
+    'Show
     Public Sub Init()
         IdentityNumber.Text = ""
-        IdentityState.Text = ""
+        IdentityState.Items.Clear()
         UserName.Text = ""
         Man.Checked = False
         Woman.Checked = False
@@ -20,6 +21,7 @@
         AddressNumber.Text = ""
         AddressContent.Text = ""
 
+        Provision.AddItem(IdentityState)
         Dim nowYear As Integer = Date.Now.ToString("yyyy")
         For i = 1900 To nowYear
             YearComboBox.Items.Add(i)
@@ -46,11 +48,23 @@
 
     '登録ボタンを押したとき
     Private Sub RegisterButton_Click(sender As Object, e As EventArgs) Handles RegisterButton.Click
+
         If Man.Checked = True Then
             jender = "男"
         ElseIf Woman.Checked = True Then
             jender = "女"
         End If
+
+        '入力チェック
+        Dim items = {IdentityNumber.Text, IdentityState.SelectedIndex, UserName.Text, 
+            jender, TelNumber.Text, YearComboBox.SelectedIndex, MonthComboBox.SelectedIndex,
+            DayComboBox.SelectedIndex, AddressNumber.Text, AddressContent.Text
+        }
+        If Provision.IsEmpty(items) Then
+            MsgBox("入力されていない項目があります")
+            Exit Sub
+        End If
+
         Dim birthday As String = YearComboBox.SelectedItem.ToString + "年" + MonthComboBox.SelectedItem.ToString + "月" + DayComboBox.SelectedItem.ToString + "日"
 
         'メッセージボックス表示
@@ -130,15 +144,24 @@
 
         End Select
     End Sub
+
+    Private Sub TelNumber_TextChanged(sender As Object, e As EventArgs) Handles TelNumber.TextChanged
+        TelNumber.Text = NotificationMsg(sender.Text)
+    End Sub
+
+    Private Sub AddressNumber_TextChanged(sender As Object, e As EventArgs) Handles AddressNumber.TextChanged
+        AddressNumber.Text = NotificationMsg(sender.Text)
+    End Sub
+
+    'ハイフンは要れない
+    Private Function NotificationMsg(text As String)
+        If text.Contains("-") Then
+            MsgBox("ハイフンは除いてください")
+            text = text.Trim("-")
+        End If
+
+        NotificationMsg = text
+    End Function
+
+
 End Class
-
-'Dim dt As DateTime = New DateTime(2002, 5, 12)
-'Debug.Print(dt)
-'Dim birthday As DateTime = New DateTime(YearComboBox.SelectedItem, MonthComboBox.SelectedItem, DayComboBox.SelectedItem)
-'Debug.Print(birthday)
-'Debug.Print(DateTime.Now.Date)
-'Dim diff = DateTime.Now.Date - birthday
-
-
-'' 結果を表示する
-'MessageBox.Show(diff.ToString("yyyy/MM/dd"))

@@ -1,11 +1,13 @@
 ﻿Public Class WithdrawalForm
 
     Private Sub WithMembershopButton_Click(sender As Object, e As EventArgs) Handles WithMembershopButton.Click
+        WithMembershipForm.Init()
         WithMembershipForm.Show()
         Hide()
     End Sub
 
     Private Sub WithIdentityButton_Click(sender As Object, e As EventArgs) Handles WithIdentityButton.Click
+        WithIdentityForm.Init()
         WithIdentityForm.Show()
         Hide()
     End Sub

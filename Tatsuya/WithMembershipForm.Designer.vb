@@ -24,7 +24,7 @@ Partial Class WithMembershipForm
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.IdentityNumber = New System.Windows.Forms.TextBox()
         Me.OKButton = New System.Windows.Forms.Button()
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -47,13 +47,13 @@ Partial Class WithMembershipForm
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "会員番号"
         '
-        'TextBox1
+        'IdentityNumber
         '
-        Me.TextBox1.Location = New System.Drawing.Point(116, 110)
-        Me.TextBox1.MaxLength = 6
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 19)
-        Me.TextBox1.TabIndex = 2
+        Me.IdentityNumber.Location = New System.Drawing.Point(116, 110)
+        Me.IdentityNumber.MaxLength = 6
+        Me.IdentityNumber.Name = "IdentityNumber"
+        Me.IdentityNumber.Size = New System.Drawing.Size(100, 19)
+        Me.IdentityNumber.TabIndex = 2
         '
         'OKButton
         '
@@ -80,7 +80,7 @@ Partial Class WithMembershipForm
         Me.ClientSize = New System.Drawing.Size(284, 261)
         Me.Controls.Add(Me.CancelButton)
         Me.Controls.Add(Me.OKButton)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.IdentityNumber)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "WithMembershipForm"
@@ -92,7 +92,7 @@ Partial Class WithMembershipForm
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents IdentityNumber As TextBox
     Friend WithEvents OKButton As Button
     Friend WithEvents CancelButton As Button
 End Class

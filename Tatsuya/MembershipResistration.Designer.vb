@@ -106,7 +106,6 @@ Partial Class MembershopRegistration
         '
         Me.IdentityState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.IdentityState.FormattingEnabled = True
-        Me.IdentityState.Items.AddRange(New Object() {"保険証", "免許証"})
         Me.IdentityState.Location = New System.Drawing.Point(94, 71)
         Me.IdentityState.Name = "IdentityState"
         Me.IdentityState.Size = New System.Drawing.Size(120, 20)

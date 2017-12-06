@@ -46,17 +46,4 @@
             IsShownWithdraw = False
         End If
     End Function
-
-
-    'Public Shared Property data = New Dictionary(Of String, String) From {
-    '    {"id", ""},
-    '    {"name", ""},
-    '    {"identityNubber", ""},
-    '    {"identityContent", ""},
-    '    {"jender", ""},
-    '    {"birthday", ""},
-    '    {"tel", ""},
-    '    {"addressNumber", ""},
-    '    {"addressContent", ""}
-    '}
 End Class

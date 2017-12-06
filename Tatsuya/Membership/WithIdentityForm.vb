@@ -14,8 +14,7 @@
 
         Dim items() = {IdentityNumber.Text, IdentityState.SelectedIndex, UserName.Text}
         If Provision.IsEmpty(items) Then
-            MsgBox("入力されていない項目があります")
-            Return
+            Exit Sub
         End If
 
         Dim result As Boolean = DBManager.IsShownWithdraw()

@@ -5,8 +5,13 @@
     End Sub
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
-        Dim id As String = IdentityNumber.Text
 
+        Dim items = {IdentityNumber.Text}
+        If Provision.IsEmpty(items) Then
+            Exit Sub
+        End If
+
+        Dim id As String = IdentityNumber.Text
         Dim result As Boolean = DBManager.IsShownWithdraw()
         If result Then
             MsgBox("退会処理を行いました", MsgBoxStyle.OkOnly, "退会完了")

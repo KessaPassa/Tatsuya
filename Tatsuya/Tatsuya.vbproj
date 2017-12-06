@@ -72,17 +72,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBManager.vb" />
-    <Compile Include="LoanoutDetailForm.Designer.vb">
+    <Compile Include="StaticManager\DBManager.vb" />
+    <Compile Include="Loanout\LoanoutDetailForm.Designer.vb">
       <DependentUpon>LoanoutDetailForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoanoutDetailForm.vb">
+    <Compile Include="Loanout\LoanoutDetailForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoanoutMainForm.Designer.vb">
+    <Compile Include="Loanout\LoanoutMainForm.Designer.vb">
       <DependentUpon>LoanoutMainForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoanoutMainForm.vb">
+    <Compile Include="Loanout\LoanoutMainForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.vb">
@@ -92,16 +92,16 @@
       <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MembershipForm.Designer.vb">
+    <Compile Include="Membership\MembershipForm.Designer.vb">
       <DependentUpon>MembershipForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="MembershipForm.vb">
+    <Compile Include="Membership\MembershipForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MembershipResistration.Designer.vb">
+    <Compile Include="Membership\MembershipResistration.Designer.vb">
       <DependentUpon>MembershipResistration.vb</DependentUpon>
     </Compile>
-    <Compile Include="MembershipResistration.vb">
+    <Compile Include="Membership\MembershipResistration.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -119,52 +119,52 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Provision.vb" />
-    <Compile Include="ReturnDetailForm.Designer.vb">
+    <Compile Include="StaticManager\Provision.vb" />
+    <Compile Include="Return\ReturnDetailForm.Designer.vb">
       <DependentUpon>ReturnDetailForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="ReturnDetailForm.vb">
+    <Compile Include="Return\ReturnDetailForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReturnMainForm.Designer.vb">
+    <Compile Include="Return\ReturnMainForm.Designer.vb">
       <DependentUpon>ReturnMainForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="ReturnMainForm.vb">
+    <Compile Include="Return\ReturnMainForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WithdrawalForm.Designer.vb">
+    <Compile Include="Membership\WithdrawalForm.Designer.vb">
       <DependentUpon>WithdrawalForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="WithdrawalForm.vb">
+    <Compile Include="Membership\WithdrawalForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WithIdentityForm.Designer.vb">
+    <Compile Include="Membership\WithIdentityForm.Designer.vb">
       <DependentUpon>WithIdentityForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="WithIdentityForm.vb">
+    <Compile Include="Membership\WithIdentityForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WithMembershipForm.Designer.vb">
+    <Compile Include="Membership\WithMembershipForm.Designer.vb">
       <DependentUpon>WithMembershipForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="WithMembershipForm.vb">
+    <Compile Include="Membership\WithMembershipForm.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoanoutDetailForm.resx">
+    <EmbeddedResource Include="Loanout\LoanoutDetailForm.resx">
       <DependentUpon>LoanoutDetailForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoanoutMainForm.resx">
+    <EmbeddedResource Include="Loanout\LoanoutMainForm.resx">
       <DependentUpon>LoanoutMainForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MembershipForm.resx">
+    <EmbeddedResource Include="Membership\MembershipForm.resx">
       <DependentUpon>MembershipForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MembershipResistration.resx">
+    <EmbeddedResource Include="Membership\MembershipResistration.resx">
       <DependentUpon>MembershipResistration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -173,19 +173,19 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReturnDetailForm.resx">
+    <EmbeddedResource Include="Return\ReturnDetailForm.resx">
       <DependentUpon>ReturnDetailForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReturnMainForm.resx">
+    <EmbeddedResource Include="Return\ReturnMainForm.resx">
       <DependentUpon>ReturnMainForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WithdrawalForm.resx">
+    <EmbeddedResource Include="Membership\WithdrawalForm.resx">
       <DependentUpon>WithdrawalForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WithIdentityForm.resx">
+    <EmbeddedResource Include="Membership\WithIdentityForm.resx">
       <DependentUpon>WithIdentityForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WithMembershipForm.resx">
+    <EmbeddedResource Include="Membership\WithMembershipForm.resx">
       <DependentUpon>WithMembershipForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -201,5 +201,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

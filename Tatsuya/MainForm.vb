@@ -3,6 +3,7 @@
     Dim timer As Timer = New Timer
 
     Private Sub LendButton_Click(sender As Object, e As EventArgs) Handles LendButton.Click
+        LoanoutMainForm.Init()
         LoanoutMainForm.Show()
         Hide()
     End Sub

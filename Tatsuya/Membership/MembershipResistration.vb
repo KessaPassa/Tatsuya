@@ -61,11 +61,11 @@
             DayComboBox.SelectedIndex, AddressNumber.Text, AddressContent.Text
         }
         If Provision.IsEmpty(items) Then
-            MsgBox("入力されていない項目があります")
             Exit Sub
         End If
 
         Dim birthday As String = YearComboBox.SelectedItem.ToString + "年" + MonthComboBox.SelectedItem.ToString + "月" + DayComboBox.SelectedItem.ToString + "日"
+        Dim birthdayForSave As String = YearComboBox.SelectedItem.ToString + "/" + MonthComboBox.SelectedItem.ToString + "/" + DayComboBox.SelectedItem.ToString
 
         'メッセージボックス表示
         Dim message As String =
@@ -87,7 +87,7 @@
             Dim r As Random = New Random()
             Dim random As Integer = r.Next(100000)
             Dim randomId As String = String.Format("{0:D6}", random)
-            SaveData(randomId, birthday)
+            SaveData(randomId, birthdayForSave)
             MsgBox("あなたの会員番号は「" + randomId + "」です" + Environment.NewLine + "OKボタンで最初の画面へ戻ります", MsgBoxStyle.OkOnly, "会員登録完了")
             MainForm.Show()
             Hide()

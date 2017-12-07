@@ -7,6 +7,7 @@
             Exit Sub
         End If
 
+        ReturnDetailForm.Init()
         ReturnDetailForm.Show()
         Hide()
     End Sub

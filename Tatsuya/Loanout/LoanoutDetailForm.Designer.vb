@@ -159,7 +159,7 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32.0!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanel.Controls.Add(Me.Pay, 6, 1)
         Me.TableLayoutPanel.Controls.Add(Me.ReturnDays, 5, 1)
         Me.TableLayoutPanel.Controls.Add(Me.Title, 1, 1)
@@ -188,7 +188,7 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel.Size = New System.Drawing.Size(644, 72)
+        Me.TableLayoutPanel.Size = New System.Drawing.Size(647, 72)
         Me.TableLayoutPanel.TabIndex = 10
         '
         'Pay
@@ -222,6 +222,7 @@ Partial Class LoanoutDetailForm
         Me.Title.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Title.AutoEllipsis = True
         Me.Title.AutoSize = True
         Me.Title.Location = New System.Drawing.Point(82, 26)
         Me.Title.Name = "Title"
@@ -278,7 +279,7 @@ Partial Class LoanoutDetailForm
         Me.DeleteButton.Location = New System.Drawing.Point(609, 26)
         Me.DeleteButton.Margin = New System.Windows.Forms.Padding(0)
         Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(33, 22)
+        Me.DeleteButton.Size = New System.Drawing.Size(36, 22)
         Me.DeleteButton.TabIndex = 23
         Me.DeleteButton.Text = "✖"
         Me.DeleteButton.UseVisualStyleBackColor = True

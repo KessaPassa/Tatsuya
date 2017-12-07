@@ -156,7 +156,7 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72.0!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
         Me.TableLayoutPanel.Controls.Add(Me.Pay, 6, 1)
         Me.TableLayoutPanel.Controls.Add(Me.ReturnDays, 5, 1)
         Me.TableLayoutPanel.Controls.Add(Me.Title, 1, 1)
@@ -182,6 +182,7 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel.Size = New System.Drawing.Size(641, 70)
         Me.TableLayoutPanel.TabIndex = 10
         '
@@ -191,9 +192,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Pay.AutoSize = True
-        Me.Pay.Location = New System.Drawing.Point(577, 25)
+        Me.Pay.Location = New System.Drawing.Point(574, 25)
         Me.Pay.Name = "Pay"
-        Me.Pay.Size = New System.Drawing.Size(59, 21)
+        Me.Pay.Size = New System.Drawing.Size(62, 21)
         Me.Pay.TabIndex = 20
         Me.Pay.Text = "　"
         Me.Pay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -204,7 +205,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ReturnDays.AutoSize = True
-        Me.ReturnDays.Location = New System.Drawing.Point(503, 25)
+        Me.ReturnDays.Location = New System.Drawing.Point(500, 25)
         Me.ReturnDays.Name = "ReturnDays"
         Me.ReturnDays.Size = New System.Drawing.Size(66, 21)
         Me.ReturnDays.TabIndex = 19
@@ -217,9 +218,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Title.AutoSize = True
-        Me.Title.Location = New System.Drawing.Point(93, 25)
+        Me.Title.Location = New System.Drawing.Point(92, 25)
         Me.Title.Name = "Title"
-        Me.Title.Size = New System.Drawing.Size(189, 21)
+        Me.Title.Size = New System.Drawing.Size(187, 21)
         Me.Title.TabIndex = 16
         Me.Title.Text = "　"
         Me.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -230,9 +231,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(577, 2)
+        Me.Label14.Location = New System.Drawing.Point(574, 2)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(59, 21)
+        Me.Label14.Size = New System.Drawing.Size(62, 21)
         Me.Label14.TabIndex = 6
         Me.Label14.Text = "料金"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -243,7 +244,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(503, 2)
+        Me.Label13.Location = New System.Drawing.Point(500, 2)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(66, 21)
         Me.Label13.TabIndex = 5
@@ -256,7 +257,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(432, 2)
+        Me.Label12.Location = New System.Drawing.Point(429, 2)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(63, 21)
         Me.Label12.TabIndex = 4
@@ -269,7 +270,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(355, 2)
+        Me.Label11.Location = New System.Drawing.Point(352, 2)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(69, 21)
         Me.Label11.TabIndex = 3
@@ -282,7 +283,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(290, 2)
+        Me.Label10.Location = New System.Drawing.Point(287, 2)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(57, 21)
         Me.Label10.TabIndex = 2
@@ -295,9 +296,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(93, 2)
+        Me.Label9.Location = New System.Drawing.Point(92, 2)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(189, 21)
+        Me.Label9.Size = New System.Drawing.Size(187, 21)
         Me.Label9.TabIndex = 1
         Me.Label9.Text = "タイトル"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -310,7 +311,7 @@ Partial Class LoanoutDetailForm
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(5, 2)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(80, 21)
+        Me.Label8.Size = New System.Drawing.Size(79, 21)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "ビデオID"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -321,7 +322,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Count.AutoSize = True
-        Me.Count.Location = New System.Drawing.Point(432, 48)
+        Me.Count.Location = New System.Drawing.Point(429, 48)
         Me.Count.Name = "Count"
         Me.Count.Size = New System.Drawing.Size(63, 20)
         Me.Count.TabIndex = 8
@@ -334,7 +335,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(503, 48)
+        Me.Label16.Location = New System.Drawing.Point(500, 48)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(66, 20)
         Me.Label16.TabIndex = 9
@@ -347,9 +348,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SumPay.AutoSize = True
-        Me.SumPay.Location = New System.Drawing.Point(577, 48)
+        Me.SumPay.Location = New System.Drawing.Point(574, 48)
         Me.SumPay.Name = "SumPay"
-        Me.SumPay.Size = New System.Drawing.Size(59, 20)
+        Me.SumPay.Size = New System.Drawing.Size(62, 20)
         Me.SumPay.TabIndex = 10
         Me.SumPay.Text = "0"
         Me.SumPay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -363,7 +364,7 @@ Partial Class LoanoutDetailForm
         Me.VideoNumber.Margin = New System.Windows.Forms.Padding(0)
         Me.VideoNumber.MaxLength = 6
         Me.VideoNumber.Name = "VideoNumber"
-        Me.VideoNumber.Size = New System.Drawing.Size(86, 19)
+        Me.VideoNumber.Size = New System.Drawing.Size(85, 19)
         Me.VideoNumber.TabIndex = 15
         '
         'Label15
@@ -372,7 +373,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(355, 48)
+        Me.Label15.Location = New System.Drawing.Point(352, 48)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(69, 20)
         Me.Label15.TabIndex = 7
@@ -385,7 +386,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LimitedAge.AutoSize = True
-        Me.LimitedAge.Location = New System.Drawing.Point(290, 25)
+        Me.LimitedAge.Location = New System.Drawing.Point(287, 25)
         Me.LimitedAge.Name = "LimitedAge"
         Me.LimitedAge.Size = New System.Drawing.Size(57, 21)
         Me.LimitedAge.TabIndex = 17
@@ -406,7 +407,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.NowTime.AutoSize = True
-        Me.NowTime.Location = New System.Drawing.Point(355, 25)
+        Me.NowTime.Location = New System.Drawing.Point(352, 25)
         Me.NowTime.Name = "NowTime"
         Me.NowTime.Size = New System.Drawing.Size(69, 21)
         Me.NowTime.TabIndex = 21
@@ -420,7 +421,7 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LoanoutDays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.LoanoutDays.FormattingEnabled = True
-        Me.LoanoutDays.Location = New System.Drawing.Point(429, 25)
+        Me.LoanoutDays.Location = New System.Drawing.Point(426, 25)
         Me.LoanoutDays.Margin = New System.Windows.Forms.Padding(0)
         Me.LoanoutDays.Name = "LoanoutDays"
         Me.LoanoutDays.Size = New System.Drawing.Size(69, 20)

@@ -1,27 +1,16 @@
 ﻿Public Class Provision
 
-    Private Const _CHECK_MESSAGE = "入力されていない項目があります"
-    Public Shared ReadOnly Property CHECK_MESSAGE As String
-        Get
-            Return _CHECK_MESSAGE
-        End Get
-    End Property
-
-    Public Enum ItemType As Integer
-        IdentityState
-        LoanoutDays
-    End Enum
+    Private Const CHECK_MESSAGE = "入力されていない項目があります"
 
     Private Shared Property identityState As String() = {
         "保険証",
         "免許証"
     }
 
-    Private Shared Property loanoutDays As Object(,) = {
-        {"1泊2日", 200},
-        {"2泊3日", 300},
-        {"6泊7日", 400},
-        {"延滞金", 300}
+    Public Shared Property loanoutDays As Loanout() = {
+        New Loanout("1泊2日", 200, 1),
+        New Loanout("2泊3日", 300, 2),
+        New Loanout("6泊7日", 400, 6)
     }
 
     Public Shared Sub AddIdentityState(ByVal comboBox As ComboBox)
@@ -34,13 +23,13 @@
 
     Public Shared Sub AddLoanoutDays(ByVal comboBox As ComboBox)
 
-        For i = 0 To loanoutDays.GetLength(0) - 2
-            comboBox.Items.Add(loanoutDays(i, 0))
+        For i = 0 To loanoutDays.GetLength(0) - 1
+            comboBox.Items.Add(loanoutDays(i).days)
         Next
     End Sub
 
     '入力されていないか調べる
-    Public Shared Function IsEmpty(items() As Object, Optional message As String = _CHECK_MESSAGE)
+    Public Shared Function IsEmpty(items() As Object, Optional message As String = CHECK_MESSAGE)
 
         For Each item In items
             If item.Equals("") Or item.Equals(-1) Or item.Equals(False) Then

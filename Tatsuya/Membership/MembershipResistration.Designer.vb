@@ -383,11 +383,15 @@ Partial Class MembershopRegistration
         '
         'NowDateTextBox
         '
+        Me.NowDateTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.NowDateTextBox.Location = New System.Drawing.Point(94, 31)
         Me.NowDateTextBox.Name = "NowDateTextBox"
         Me.NowDateTextBox.ReadOnly = True
         Me.NowDateTextBox.Size = New System.Drawing.Size(120, 19)
         Me.NowDateTextBox.TabIndex = 1
+        Me.NowDateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RegisterButton
         '

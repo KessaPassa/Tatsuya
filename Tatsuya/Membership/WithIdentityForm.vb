@@ -30,4 +30,10 @@
         WithdrawalForm.Show()
         Hide()
     End Sub
+
+    Private Sub IdentityNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles IdentityNumber.KeyPress
+        If Provision.OnlyNumeric(e) = False Then
+            Exit Sub
+        End If
+    End Sub
 End Class

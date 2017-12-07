@@ -50,6 +50,7 @@ Partial Class LoanoutMainForm
         'IdentityNumber
         '
         Me.IdentityNumber.Location = New System.Drawing.Point(142, 104)
+        Me.IdentityNumber.MaxLength = 6
         Me.IdentityNumber.Name = "IdentityNumber"
         Me.IdentityNumber.Size = New System.Drawing.Size(100, 19)
         Me.IdentityNumber.TabIndex = 4

@@ -24,7 +24,7 @@ Partial Class ReturnMainForm
     Private Sub InitializeComponent()
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.OKButton = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.VideoId = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -46,12 +46,13 @@ Partial Class ReturnMainForm
         Me.OKButton.Text = "OK"
         Me.OKButton.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'VideoId
         '
-        Me.TextBox1.Location = New System.Drawing.Point(145, 96)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 19)
-        Me.TextBox1.TabIndex = 14
+        Me.VideoId.Location = New System.Drawing.Point(145, 96)
+        Me.VideoId.MaxLength = 6
+        Me.VideoId.Name = "VideoId"
+        Me.VideoId.Size = New System.Drawing.Size(100, 19)
+        Me.VideoId.TabIndex = 14
         '
         'Label2
         '
@@ -69,7 +70,7 @@ Partial Class ReturnMainForm
         Me.ClientSize = New System.Drawing.Size(284, 261)
         Me.Controls.Add(Me.CancelButton)
         Me.Controls.Add(Me.OKButton)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.VideoId)
         Me.Controls.Add(Me.Label2)
         Me.Name = "ReturnMainForm"
         Me.Text = "ビデオID入力"
@@ -80,6 +81,6 @@ Partial Class ReturnMainForm
 
     Friend WithEvents CancelButton As Button
     Friend WithEvents OKButton As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents VideoId As TextBox
     Friend WithEvents Label2 As Label
 End Class

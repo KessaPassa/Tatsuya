@@ -21,7 +21,7 @@
         AddressNumber.Text = ""
         AddressContent.Text = ""
 
-        Provision.AddItem(IdentityState)
+        Provision.AddIdentityState(IdentityState)
         Dim nowYear As Integer = Date.Now.ToString("yyyy")
         For i = 1900 To nowYear
             YearComboBox.Items.Add(i)
@@ -163,5 +163,21 @@
         NotificationMsg = text
     End Function
 
+    Private Sub IdentityNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles IdentityNumber.KeyPress
+        If Provision.OnlyNumeric(e) = False Then
+            Exit Sub
+        End If
+    End Sub
 
+    Private Sub TelNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TelNumber.KeyPress
+        If Provision.OnlyNumeric(e) = False Then
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub AddressNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles AddressNumber.KeyPress
+        If Provision.OnlyNumeric(e) = False Then
+            Exit Sub
+        End If
+    End Sub
 End Class

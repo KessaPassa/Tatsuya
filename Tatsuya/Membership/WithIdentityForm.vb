@@ -1,7 +1,7 @@
 ﻿Public Class WithIdentityForm
 
     Private Sub WithIdentityForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Provision.AddItem(IdentityState)
+        Provision.AddIdentityState(IdentityState)
     End Sub
 
     Public Sub Init()

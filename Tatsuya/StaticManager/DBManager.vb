@@ -46,4 +46,8 @@
             IsShownWithdraw = False
         End If
     End Function
+
+    Public Shared Function ConvertIdToString(id As String)
+        ConvertIdToString = "工房大乱闘"
+    End Function
 End Class

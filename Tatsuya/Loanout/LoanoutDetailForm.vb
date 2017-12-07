@@ -3,6 +3,7 @@
     Dim newTextBox As TextBox
     Dim newLabel As Label
     Dim newComboBox As ComboBox
+    Dim newButton As Button
 
     Public Sub Init()
         IdentityNuber.Text = DBManager.id
@@ -37,6 +38,7 @@
         newTextBox = VideoNumber
         newLabel = Title
         newComboBox = LoanoutDays
+        newButton = DeleteButton
     End Sub
 
     Private Sub VideoNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles VideoNumber.KeyPress
@@ -50,20 +52,53 @@
                 Title.Text = video.title
                 LimitedAge.Text = video.limitedAge
 
-                'TableLayoutPanel.RowCount += 1
-
+                AddTable()
             End If
         End If
     End Sub
 
-    Private Sub LoanoutDays_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub LoanoutDays_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LoanoutDays.SelectedIndexChanged
 
         Dim text = LoanoutDays.SelectedItem
         Dim loanout = Provision.loanoutDays
-        For i = 0 To loanout.GetLength(0)
+        For i = 0 To loanout.GetLength(0) - 1
             If text = loanout(i).days Then
-                ReturnDays.Text = loanout(i).limit
+                ReturnDays.Text = DateTime.Today + New TimeSpan(loanout(i).limit, 0, 0, 0)
             End If
+        Next
+    End Sub
+
+    Private Sub AddTable()
+        Dim transform = TableLayoutPanel.Size
+        transform.Height += 24
+        TableLayoutPanel.Size = transform
+        TableLayoutPanel.RowCount += 1
+
+
+    End Sub
+
+    Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
+
+        sender.Visible = False
+        Dim table = TableLayoutPanel
+        Dim child As Control = Nothing
+        Dim row
+        For row = 0 To table.RowCount - 1
+            child = table.GetControlFromPosition(7, row)
+            If Not (child Is Nothing) Then
+                If child.Visible = False Then
+                    Exit For
+                End If
+            End If
+        Next
+        sender.Visible = True
+        If child Is Nothing Then
+            Exit Sub
+        End If
+
+        For x = 0 To table.ColumnCount
+            Dim column = table.GetControlFromPosition(x, row)
+            TableLayoutPanel.Controls.Remove(column)
         Next
     End Sub
 End Class

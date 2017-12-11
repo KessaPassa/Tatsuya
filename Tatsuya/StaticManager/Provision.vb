@@ -1,4 +1,6 @@
-﻿Public Class Provision
+﻿Imports Microsoft.VisualBasic
+
+Public Class Provision
 
     Private Const CHECK_MESSAGE = "入力されていない項目があります"
 
@@ -8,9 +10,9 @@
     }
 
     Public Shared Property loanoutDays As Loanout() = {
-        New Loanout("1泊2日", 200, 1),
-        New Loanout("2泊3日", 300, 2),
-        New Loanout("6泊7日", 400, 6)
+        New Loanout("1泊2日", 1, 200),
+        New Loanout("2泊3日", 2, 300),
+        New Loanout("6泊7日", 6, 400)
     }
 
     Public Shared Sub AddIdentityState(ByVal comboBox As ComboBox)

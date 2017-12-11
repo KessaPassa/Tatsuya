@@ -1,4 +1,6 @@
-﻿Public Class WithIdentityForm
+﻿Imports Microsoft.VisualBasic
+
+Public Class WithIdentityForm
 
     Private Sub WithIdentityForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Provision.AddIdentityState(IdentityState)
@@ -17,7 +19,7 @@
             Exit Sub
         End If
 
-        Dim result As Boolean = DBManager.IsShownWithdraw()
+        Dim result As Boolean = DBManager.instance.users(0).IsShownWithdraw()
         If result Then
             MsgBox("退会処理を行いました", MsgBoxStyle.OkOnly, "退会完了")
             DBManager.Delete()

@@ -11,7 +11,7 @@
             Exit Sub
         End If
 
-        LoanoutDetailForm.Init()
+        LoanoutDetailForm.Init(IdentityNumber.Text)
         LoanoutDetailForm.Show()
         Hide()
     End Sub

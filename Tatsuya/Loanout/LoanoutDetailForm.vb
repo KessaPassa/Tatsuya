@@ -1,11 +1,14 @@
-﻿Public Class LoanoutDetailForm
+﻿Imports Microsoft.VisualBasic
+
+Public Class LoanoutDetailForm
 
     Public Sub Init()
-        IdentityNuber.Text = DBManager.id
-        UserName.Text = DBManager.name
-        Dim split() As String = DBManager.birthday.Split("/")
-        Dim birthday = New DateTime(split(0), split(1), split(2))
-        UserAge.Text = Int((DateTime.Today - birthday).TotalDays / 365) & "歳"
+
+        Dim user As User = DBManager.instance.FetchUser("123456")
+        IdentityNuber.Text = user.id
+        UserName.Text = user.name
+        Dim split() As String = user.birthday.ToString("yyy/MM/dd").Split("/")
+        UserAge.Text = CUInt((Date.Today - user.birthday).TotalDays / 365) & "歳"
 
         VideoNumber.Text = ""
         Title.Text = ""
@@ -41,9 +44,9 @@
         Else
             Dim videoId As String = sender.Text
             If videoId.Length = 5 Then
-                Dim video = New Video("123321", "工房大乱闘", "18禁")
+                Dim video As Video = DBManager.instance.FetchVideo("123456")
                 Title.Text = video.title
-                LimitedAge.Text = video.limitedAge
+                LimitedAge.Text = video.limited_age
                 If LimitedAge.Text = "18禁" Then
                     LimitedAge.ForeColor = Color.Red
                 Else

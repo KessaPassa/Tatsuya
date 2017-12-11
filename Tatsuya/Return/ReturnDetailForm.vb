@@ -3,9 +3,10 @@
     Dim videoId = "123456"
 
     Sub Init()
+        Dim user As User = DBManager.instance.FetchUser("123456")
         VideoIdGroupBox.Text = "ビデオID: " & videoId
-        IdentityNumber.Text = DBManager.id
-        UserName.Text = DBManager.name
+        IdentityNumber.Text = user.id
+        UserName.Text = user.name
         ReturnDays.Text = DateTime.Today.ToString("yyy/MM/dd")
     End Sub
 
@@ -15,9 +16,10 @@
         Dim diff = ReturnDays.Text - DateTime.Today.ToString("yyy/MM/dd")
         If diff < 0.0 Then
             '延滞
+            message = "延滞"
 
         Else
-            Message =
+            message =
             "返却処理を行います" & Environment.NewLine &
             "以下の内容でよろしいですか" & Environment.NewLine &
             "----" & Environment.NewLine &

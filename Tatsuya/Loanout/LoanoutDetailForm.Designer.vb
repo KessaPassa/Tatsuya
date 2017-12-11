@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LoanoutDetailForm
     Inherits System.Windows.Forms.Form
 
     'フォームがコンポーネントの一覧をクリーンアップするために dispose をオーバーライドします。
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class LoanoutDetailForm
     'メモ: 以下のプロシージャは Windows フォーム デザイナーで必要です。
     'Windows フォーム デザイナーを使用して変更できます。  
     'コード エディターを使って変更しないでください。
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.UserAge = New System.Windows.Forms.Label()
@@ -159,7 +159,7 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38.0!))
         Me.TableLayoutPanel.Controls.Add(Me.Pay, 6, 1)
         Me.TableLayoutPanel.Controls.Add(Me.ReturnDays, 5, 1)
         Me.TableLayoutPanel.Controls.Add(Me.Title, 1, 1)
@@ -188,7 +188,7 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel.Size = New System.Drawing.Size(647, 72)
+        Me.TableLayoutPanel.Size = New System.Drawing.Size(650, 72)
         Me.TableLayoutPanel.TabIndex = 10
         '
         'Pay
@@ -279,7 +279,7 @@ Partial Class LoanoutDetailForm
         Me.DeleteButton.Location = New System.Drawing.Point(609, 26)
         Me.DeleteButton.Margin = New System.Windows.Forms.Padding(0)
         Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(36, 22)
+        Me.DeleteButton.Size = New System.Drawing.Size(39, 22)
         Me.DeleteButton.TabIndex = 23
         Me.DeleteButton.Text = "✖"
         Me.DeleteButton.UseVisualStyleBackColor = True

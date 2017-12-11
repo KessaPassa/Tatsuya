@@ -1,4 +1,6 @@
-﻿Public Class MembershopRegistration
+﻿Imports Microsoft.VisualBasic
+
+Public Class MembershopRegistration
 
     Dim jender As String = ""
 
@@ -33,19 +35,6 @@
 
     End Sub
 
-    '内部データベースに保存
-    Private Sub SaveData(id As String, birthday As String)
-        DBManager.id = id
-        DBManager.name = UserName.Text
-        DBManager.identityNumber = IdentityNumber.Text
-        DBManager.identityState = IdentityState.SelectedItem
-        DBManager.jender = jender
-        DBManager.tel = TelNumber.Text
-        DBManager.birthday = birthday
-        DBManager.addressNumber = AddressNumber.Text
-        DBManager.addressContent = AddressContent.Text
-    End Sub
-
     '登録ボタンを押したとき
     Private Sub RegisterButton_Click(sender As Object, e As EventArgs) Handles RegisterButton.Click
 
@@ -56,7 +45,7 @@
         End If
 
         '入力チェック
-        Dim items = {IdentityNumber.Text, IdentityState.SelectedIndex, UserName.Text, 
+        Dim items = {IdentityNumber.Text, IdentityState.SelectedIndex, UserName.Text,
             jender, TelNumber.Text, YearComboBox.SelectedIndex, MonthComboBox.SelectedIndex,
             DayComboBox.SelectedIndex, AddressNumber.Text, AddressContent.Text
         }
@@ -87,7 +76,7 @@
             Dim r As Random = New Random()
             Dim random As Integer = r.Next(100000)
             Dim randomId As String = String.Format("{0:D6}", random)
-            SaveData(randomId, birthdayForSave)
+
             MsgBox("あなたの会員番号は「" + randomId + "」です" + Environment.NewLine + "OKボタンで最初の画面へ戻ります", MsgBoxStyle.OkOnly, "会員登録完了")
             MainForm.Show()
             Hide()

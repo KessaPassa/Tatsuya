@@ -2,8 +2,6 @@
 
 Public Class MembershopRegistration
 
-    Dim jender As String = ""
-
     ' Activatedイベント・ハンドラ
     Private Sub MembershopRegistration_Activated(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Activated
         NowDateTextBox.Text = Date.Now.ToString("yyyy/MM/dd (ddd)")
@@ -38,6 +36,7 @@ Public Class MembershopRegistration
     '登録ボタンを押したとき
     Private Sub RegisterButton_Click(sender As Object, e As EventArgs) Handles RegisterButton.Click
 
+        Dim jender As String = ""
         If Man.Checked = True Then
             jender = "男"
         ElseIf Woman.Checked = True Then
@@ -54,30 +53,37 @@ Public Class MembershopRegistration
         End If
 
         Dim birthday As String = YearComboBox.SelectedItem.ToString + "年" + MonthComboBox.SelectedItem.ToString + "月" + DayComboBox.SelectedItem.ToString + "日"
-        Dim birthdayForSave As String = YearComboBox.SelectedItem.ToString + "/" + MonthComboBox.SelectedItem.ToString + "/" + DayComboBox.SelectedItem.ToString
+
+        Dim r As Random = New Random()
+        Dim random As Integer = r.Next(100000)
+        Dim randomId As String = String.Format("{0:D6}", random)
+        Dim user = New User(
+            randomId, UserName.Text, jender,
+            New Date(YearComboBox.SelectedItem.ToString, MonthComboBox.SelectedItem.ToString, DayComboBox.SelectedItem.ToString),
+            Date.Today, TelNumber.Text, AddressNumber.Text, AddressContent.Text,
+            IdentityNumber.Text, IdentityState.SelectedItem
+        )
 
         'メッセージボックス表示
         Dim message As String =
-            "登録日: " & NowDateTextBox.Text & Environment.NewLine &
+            "登録日: " & user.registerday & Environment.NewLine &
             "----" & Environment.NewLine &
-            "身分証明書: " & IdentityNumber.Text & Environment.NewLine &
-            "身分証種別: " & IdentityState.SelectedItem & Environment.NewLine &
-            "氏名: " & UserName.Text & Environment.NewLine &
+            "身分証明書: " & user.identity_number & Environment.NewLine &
+            "身分証種別: " & user.identity_state & Environment.NewLine &
+            "氏名: " & user.name & Environment.NewLine &
             "性別: " & jender & Environment.NewLine &
             "生年月日: " & birthday & Environment.NewLine &
-            "電話番号: " & TelNumber.Text & Environment.NewLine &
-            "郵便番号: " & AddressNumber.Text & Environment.NewLine &
-            "住所: " & AddressContent.Text & Environment.NewLine &
+            "電話番号: " & user.tel & Environment.NewLine &
+            "郵便番号: " & user.address_number & Environment.NewLine &
+            "住所: " & user.address_content & Environment.NewLine &
             "----" & Environment.NewLine &
             "以上の情報で登録してよろしいですか？"
         Dim result As DialogResult = MessageBox.Show(message, "登録内容確認", MessageBoxButtons.YesNo)
 
         If result = DialogResult.Yes Then
-            Dim r As Random = New Random()
-            Dim random As Integer = r.Next(100000)
-            Dim randomId As String = String.Format("{0:D6}", random)
 
-            MsgBox("あなたの会員番号は「" + randomId + "」です" + Environment.NewLine + "OKボタンで最初の画面へ戻ります", MsgBoxStyle.OkOnly, "会員登録完了")
+            DBManager.instance.Save(user, DBManager.Type.user)
+            MsgBox("あなたの会員番号は「" + user.id + "」です" + Environment.NewLine + "OKボタンで最初の画面へ戻ります", MsgBoxStyle.OkOnly, "会員登録完了")
             MainForm.Show()
             Hide()
         End If

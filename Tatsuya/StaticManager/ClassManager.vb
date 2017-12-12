@@ -25,6 +25,10 @@
         Me.identity_state = identity_state
     End Sub
 
+    Public Function NowAge()
+        NowAge = Int((Date.Today - birthday).TotalDays / 365)
+    End Function
+
     '退会処理のメッセージを表示し、YesかNoかを返す
     Public Function IsShownWithdraw()
         'メッセージボックス表示
@@ -57,14 +61,16 @@ Public Class Video
     Property limited_age As String
     Property purchace_company As String
     Property purchace_day As Date
+    Property pay As Integer
 
-    Sub New(id As String, title As String, imited_age As String, purchace_company As String, purchace_day As Date)
+    Sub New(id As String, title As String, limited_age As String, purchace_company As String, purchace_day As Date, pay As Integer)
 
         Me.id = id
         Me.title = title
         Me.limited_age = limited_age
         Me.purchace_company = purchace_company
         Me.purchace_day = purchace_day
+        Me.pay = pay
     End Sub
 End Class
 

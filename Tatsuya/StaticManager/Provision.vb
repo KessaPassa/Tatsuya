@@ -44,6 +44,18 @@ Public Class Provision
         IsEmpty = False
     End Function
 
+    '指定した長さより短いか長いか調べる
+    Public Shared Function IsCount(items() As Object, count As Integer)
+
+        For Each item In items
+            If item.length < count Then
+                IsCount = False
+            End If
+        Next
+
+        IsCount = True
+    End Function
+
     '押されたキーが 0～9でない場合は、イベントをキャンセルする
     Public Shared Function OnlyNumeric(e As KeyPressEventArgs)
         If e.KeyChar < "0"c OrElse "9"c < e.KeyChar Then

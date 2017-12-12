@@ -1,14 +1,15 @@
-﻿Imports Microsoft.VisualBasic
+﻿Public Class LoanoutDetailForm
 
-Public Class LoanoutDetailForm
+    Dim age As Integer
 
-    Public Sub Init()
+    Public Sub Init(id As String)
 
         Dim user As User = DBManager.instance.FetchUser("123456")
         IdentityNuber.Text = user.id
         UserName.Text = user.name
         Dim split() As String = user.birthday.ToString("yyy/MM/dd").Split("/")
-        UserAge.Text = CUInt((Date.Today - user.birthday).TotalDays / 365) & "歳"
+        age = user.NowAge()
+        UserAge.Text = age & "歳"
 
         VideoNumber.Text = ""
         Title.Text = ""
@@ -17,7 +18,6 @@ Public Class LoanoutDetailForm
         LoanoutDays.SelectedIndex = -1
         ReturnDays.Text = ""
         Pay.Text = ""
-
     End Sub
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
@@ -49,6 +49,9 @@ Public Class LoanoutDetailForm
                 LimitedAge.Text = video.limited_age
                 If LimitedAge.Text = "18禁" Then
                     LimitedAge.ForeColor = Color.Red
+                    If age < 18 Then
+                        MessageBox.Text = "18歳未満なのでダメです！"
+                    End If
                 Else
                     LimitedAge.ForeColor = Color.Black
                 End If

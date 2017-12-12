@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-
-Public Class WithIdentityForm
+﻿Public Class WithIdentityForm
 
     Private Sub WithIdentityForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Provision.AddIdentityState(IdentityState)

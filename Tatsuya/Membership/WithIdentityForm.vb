@@ -17,10 +17,11 @@
             Exit Sub
         End If
 
+        Dim id As String = IdentityNumber.Text
         Dim result As Boolean = DBManager.instance.users(0).IsShownWithdraw()
         If result Then
             MsgBox("退会処理を行いました", MsgBoxStyle.OkOnly, "退会完了")
-            DBManager.Delete()
+            DBManager.instance.Delete(id, DBManager.Type.user)
             MainForm.Show()
             Hide()
         End If

@@ -23,9 +23,9 @@ Partial Class MembershopRegistration
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.IdentityNumber = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.IdentityNumber = New System.Windows.Forms.TextBox()
         Me.IdentityState = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -35,9 +35,13 @@ Partial Class MembershopRegistration
         Me.UserName = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Tel3 = New System.Windows.Forms.TextBox()
+        Me.Tel2 = New System.Windows.Forms.TextBox()
+        Me.Tel1 = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TelNumber = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -73,13 +77,6 @@ Partial Class MembershopRegistration
         Me.DateTimePicker1.Size = New System.Drawing.Size(0, 19)
         Me.DateTimePicker1.TabIndex = 0
         '
-        'IdentityNumber
-        '
-        Me.IdentityNumber.Location = New System.Drawing.Point(94, 31)
-        Me.IdentityNumber.Name = "IdentityNumber"
-        Me.IdentityNumber.Size = New System.Drawing.Size(120, 19)
-        Me.IdentityNumber.TabIndex = 1
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -91,16 +88,24 @@ Partial Class MembershopRegistration
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.IdentityNumber)
         Me.GroupBox1.Controls.Add(Me.IdentityState)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.IdentityNumber)
         Me.GroupBox1.Location = New System.Drawing.Point(20, 20)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(240, 100)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "身分証情報"
+        '
+        'IdentityNumber
+        '
+        Me.IdentityNumber.Location = New System.Drawing.Point(94, 32)
+        Me.IdentityNumber.MaxLength = 20
+        Me.IdentityNumber.Name = "IdentityNumber"
+        Me.IdentityNumber.Size = New System.Drawing.Size(120, 19)
+        Me.IdentityNumber.TabIndex = 6
         '
         'IdentityState
         '
@@ -168,6 +173,7 @@ Partial Class MembershopRegistration
         'UserName
         '
         Me.UserName.Location = New System.Drawing.Point(52, 31)
+        Me.UserName.MaxLength = 20
         Me.UserName.Name = "UserName"
         Me.UserName.Size = New System.Drawing.Size(162, 19)
         Me.UserName.TabIndex = 5
@@ -183,9 +189,13 @@ Partial Class MembershopRegistration
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Tel3)
+        Me.GroupBox3.Controls.Add(Me.Tel2)
+        Me.GroupBox3.Controls.Add(Me.Tel1)
+        Me.GroupBox3.Controls.Add(Me.Label17)
+        Me.GroupBox3.Controls.Add(Me.Label16)
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Controls.Add(Me.TelNumber)
         Me.GroupBox3.Location = New System.Drawing.Point(20, 140)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(240, 70)
@@ -193,14 +203,77 @@ Partial Class MembershopRegistration
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "電話番号"
         '
+        'Tel3
+        '
+        Me.Tel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tel3.Location = New System.Drawing.Point(177, 31)
+        Me.Tel3.MaxLength = 4
+        Me.Tel3.Name = "Tel3"
+        Me.Tel3.Size = New System.Drawing.Size(51, 19)
+        Me.Tel3.TabIndex = 11
+        Me.Tel3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Tel2
+        '
+        Me.Tel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tel2.Location = New System.Drawing.Point(95, 31)
+        Me.Tel2.MaxLength = 4
+        Me.Tel2.Name = "Tel2"
+        Me.Tel2.Size = New System.Drawing.Size(51, 19)
+        Me.Tel2.TabIndex = 10
+        Me.Tel2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Tel1
+        '
+        Me.Tel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tel1.Location = New System.Drawing.Point(12, 31)
+        Me.Tel1.MaxLength = 3
+        Me.Tel1.Name = "Tel1"
+        Me.Tel1.Size = New System.Drawing.Size(51, 19)
+        Me.Tel1.TabIndex = 7
+        Me.Tel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label17
+        '
+        Me.Label17.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("MS UI Gothic", 14.0!)
+        Me.Label17.Location = New System.Drawing.Point(152, 31)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(19, 19)
+        Me.Label17.TabIndex = 9
+        Me.Label17.Text = "-"
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label16
+        '
+        Me.Label16.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("MS UI Gothic", 14.0!)
+        Me.Label16.Location = New System.Drawing.Point(69, 31)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(19, 19)
+        Me.Label16.TabIndex = 8
+        Me.Label16.Text = "-"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(123, 15)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(100, 12)
+        Me.Label10.Size = New System.Drawing.Size(0, 12)
         Me.Label10.TabIndex = 5
-        Me.Label10.Text = "*ハイフンなしで半角"
         '
         'Label5
         '
@@ -209,14 +282,6 @@ Partial Class MembershopRegistration
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(0, 12)
         Me.Label5.TabIndex = 3
-        '
-        'TelNumber
-        '
-        Me.TelNumber.Location = New System.Drawing.Point(23, 31)
-        Me.TelNumber.MaxLength = 9
-        Me.TelNumber.Name = "TelNumber"
-        Me.TelNumber.Size = New System.Drawing.Size(200, 19)
-        Me.TelNumber.TabIndex = 1
         '
         'GroupBox4
         '
@@ -313,6 +378,7 @@ Partial Class MembershopRegistration
         'AddressContent
         '
         Me.AddressContent.Location = New System.Drawing.Point(94, 72)
+        Me.AddressContent.MaxLength = 50
         Me.AddressContent.Name = "AddressContent"
         Me.AddressContent.Size = New System.Drawing.Size(380, 19)
         Me.AddressContent.TabIndex = 7
@@ -346,11 +412,15 @@ Partial Class MembershopRegistration
         '
         'AddressNumber
         '
+        Me.AddressNumber.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AddressNumber.Location = New System.Drawing.Point(94, 31)
         Me.AddressNumber.MaxLength = 7
         Me.AddressNumber.Name = "AddressNumber"
         Me.AddressNumber.Size = New System.Drawing.Size(120, 19)
         Me.AddressNumber.TabIndex = 1
+        Me.AddressNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox6
         '
@@ -444,7 +514,6 @@ Partial Class MembershopRegistration
     End Sub
 
     Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents IdentityNumber As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label2 As Label
@@ -457,7 +526,6 @@ Partial Class MembershopRegistration
     Friend WithEvents Woman As RadioButton
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TelNumber As TextBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
@@ -479,4 +547,10 @@ Partial Class MembershopRegistration
     Friend WithEvents NowDateTextBox As TextBox
     Friend WithEvents RegisterButton As Button
     Friend WithEvents CancelButton As Button
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents IdentityNumber As TextBox
+    Friend WithEvents Tel3 As TextBox
+    Friend WithEvents Tel2 As TextBox
+    Friend WithEvents Tel1 As TextBox
 End Class

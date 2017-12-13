@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-
-Public Class MembershopRegistration
+﻿Public Class MembershopRegistration
 
     ' Activatedイベント・ハンドラ
     Private Sub MembershopRegistration_Activated(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Activated
@@ -14,7 +12,7 @@ Public Class MembershopRegistration
         UserName.Text = ""
         Man.Checked = False
         Woman.Checked = False
-        TelNumber.Text = ""
+        Tel1.Text = ""
         YearComboBox.Items.Clear()
         MonthComboBox.Items.Clear()
         DayComboBox.Items.Clear()
@@ -45,7 +43,7 @@ Public Class MembershopRegistration
 
         '入力チェック
         Dim items = {IdentityNumber.Text, IdentityState.SelectedIndex, UserName.Text,
-            jender, TelNumber.Text, YearComboBox.SelectedIndex, MonthComboBox.SelectedIndex,
+            jender, Tel1.Text, YearComboBox.SelectedIndex, MonthComboBox.SelectedIndex,
             DayComboBox.SelectedIndex, AddressNumber.Text, AddressContent.Text
         }
         If Provision.IsEmpty(items) Then
@@ -54,14 +52,22 @@ Public Class MembershopRegistration
 
         Dim birthday As String = YearComboBox.SelectedItem.ToString + "年" + MonthComboBox.SelectedItem.ToString + "月" + DayComboBox.SelectedItem.ToString + "日"
 
-        Dim r As Random = New Random()
-        Dim random As Integer = r.Next(100000)
-        Dim randomId As String = String.Format("{0:D6}", random)
+        '同一のIDが生成されないようにする
+        Dim seed As Integer = Environment.TickCount
+        Dim randomId As String
+        Do
+            seed += 1
+            Dim r As Random = New Random(seed)
+            Dim random As Integer = r.Next(100000)
+            randomId = String.Format("{0:D6}", random)
+        Loop While DBManager.instance.IsExitID(randomId, DBManager.Type.user)
+
+
         Dim user = New User(
             randomId, UserName.Text, jender,
             New Date(YearComboBox.SelectedItem.ToString, MonthComboBox.SelectedItem.ToString, DayComboBox.SelectedItem.ToString),
-            Date.Today, TelNumber.Text, AddressNumber.Text, AddressContent.Text,
-            IdentityNumber.Text, IdentityState.SelectedItem
+            Date.Today, Tel1.Text + "-" + Tel2.Text + "-" + Tel3.Text, AddressNumber.Text,
+            AddressContent.Text, IdentityNumber.Text, IdentityState.SelectedItem
         )
 
         'メッセージボックス表示
@@ -140,37 +146,8 @@ Public Class MembershopRegistration
         End Select
     End Sub
 
-    Private Sub TelNumber_TextChanged(sender As Object, e As EventArgs) Handles TelNumber.TextChanged
-        TelNumber.Text = NotificationMsg(sender.Text)
-    End Sub
-
-    Private Sub AddressNumber_TextChanged(sender As Object, e As EventArgs) Handles AddressNumber.TextChanged
-        AddressNumber.Text = NotificationMsg(sender.Text)
-    End Sub
-
-    'ハイフンは要れない
-    Private Function NotificationMsg(text As String)
-        If text.Contains("-") Then
-            MsgBox("ハイフンは除いてください")
-            text = text.Trim("-")
-        End If
-
-        NotificationMsg = text
-    End Function
-
-    Private Sub IdentityNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles IdentityNumber.KeyPress
-        If Provision.OnlyNumeric(e) = False Then
-            Exit Sub
-        End If
-    End Sub
-
-    Private Sub TelNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TelNumber.KeyPress
-        If Provision.OnlyNumeric(e) = False Then
-            Exit Sub
-        End If
-    End Sub
-
-    Private Sub AddressNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles AddressNumber.KeyPress
+    '数字のみ。ハイフンも要れない
+    Private Sub KeyPressManager(sender As Object, e As KeyPressEventArgs) Handles AddressNumber.KeyPress, IdentityNumber.KeyPress, Tel1.KeyPress, Tel2.KeyPress, Tel3.KeyPress
         If Provision.OnlyNumeric(e) = False Then
             Exit Sub
         End If

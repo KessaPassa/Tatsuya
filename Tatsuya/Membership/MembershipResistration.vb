@@ -60,7 +60,7 @@
             Dim r As Random = New Random(seed)
             Dim random As Integer = r.Next(100000)
             randomId = String.Format("{0:D6}", random)
-        Loop While DBManager.instance.IsExitID(randomId, DBManager.Type.user)
+        Loop Until DBManager.IsExitID(randomId, DBManager.Type.user)
 
 
         Dim user = New User(
@@ -88,7 +88,7 @@
 
         If result = DialogResult.Yes Then
 
-            DBManager.instance.Save(user, DBManager.Type.user)
+            DBManager.Save(user, DBManager.Type.user)
             MsgBox("あなたの会員番号は「" + user.id + "」です" + Environment.NewLine + "OKボタンで最初の画面へ戻ります", MsgBoxStyle.OkOnly, "会員登録完了")
             MainForm.Show()
             Hide()

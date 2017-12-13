@@ -160,7 +160,7 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.0!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.TableLayoutPanel.Controls.Add(Me.Pay, 6, 1)
         Me.TableLayoutPanel.Controls.Add(Me.ReturnDays, 5, 1)
         Me.TableLayoutPanel.Controls.Add(Me.Title, 1, 1)
@@ -189,7 +189,7 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel.Size = New System.Drawing.Size(653, 72)
+        Me.TableLayoutPanel.Size = New System.Drawing.Size(662, 72)
         Me.TableLayoutPanel.TabIndex = 10
         '
         'Pay
@@ -280,7 +280,7 @@ Partial Class LoanoutDetailForm
         Me.DeleteButton.Location = New System.Drawing.Point(609, 26)
         Me.DeleteButton.Margin = New System.Windows.Forms.Padding(0)
         Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(42, 22)
+        Me.DeleteButton.Size = New System.Drawing.Size(51, 22)
         Me.DeleteButton.TabIndex = 23
         Me.DeleteButton.Text = "✖"
         Me.DeleteButton.UseVisualStyleBackColor = True

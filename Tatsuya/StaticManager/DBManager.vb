@@ -6,45 +6,27 @@
         loanout
     End Enum
 
-    Public Shared Property instance As DBManager = New DBManager()
-    Private Property engine As DBEngine
-    Private Property database As Database
-    Public Property record As Recordset
+    'Public Shared Property instance As DBManager = New DBManager()
+    Private Shared Property engine = New DBEngine
+    Private Shared Property database As Database
+    Private Shared Property record As Recordset
 
-    Public Property users As User() = {FetchUser("111111")}
-    Public Property videos As Video()
-    Public Property loanouts As Loanout()
-
-    Sub New()
-        engine = New DBEngine
+    Private Shared Sub OpenDatabase(sql As String)
         database = engine.OpenDatabase("..\..\..\Database\TatsuyaDatabase.mdb")
+        record = database.OpenRecordset(sql)
     End Sub
 
-    'Sub OpenDatabase(type As Type)
-
-    '    Select Case type
-    '        Case Type.user
-    '            record = database.OpenRecordset("会員管理")
-
-    '        Case Type.video
-    '            record = database.OpenRecordset("ビデオ管理")
-
-    '        Case Type.loanout
-    '            record = database.OpenRecordset("貸出管理")
-    '    End Select
-    'End Sub
-
-    Sub CloseDatabese()
+    Private Shared Sub CloseDatabese()
         record.Clone()
-        'database.Close()
+        database.Close()
     End Sub
 
-    Sub Save(obj As Object, type As Type)
+    Public Shared Sub Save(obj As Object, type As Type)
 
         Select Case type
             Case Type.user
                 Dim user = CType(obj, User)
-                record = database.OpenRecordset("会員管理")
+                OpenDatabase("会員管理")
                 record.AddNew()
                 record.Fields("会員番号").Value = user.id
                 record.Fields("氏名").Value = user.name
@@ -59,7 +41,8 @@
 
             Case Type.video
                 Dim video = CType(obj, Video)
-                record = database.OpenRecordset("ビデオ管理")
+                OpenDatabase("ビデオ管理")
+                record.AddNew()
                 record.Fields("ビデオ番号").Value = video.id
                 record.Fields("タイトル").Value = video.title
                 record.Fields("販売元").Value = video.purchace_company
@@ -69,7 +52,7 @@
 
             Case Type.loanout
                 Dim loanout = CType(obj, Loanout)
-                record = database.OpenRecordset("貸出管理")
+                OpenDatabase("貸出管理")
 
         End Select
 
@@ -82,34 +65,35 @@
         CloseDatabese()
     End Sub
 
-    Public Sub Delete(id As String, type As Type)
+    Public Shared Sub Delete(id As String, type As Type)
 
         Select Case type
             Case Type.user
                 Dim sql = "select 会員番号 from 会員管理 where 会員番号 = '" & id & "'"
-                record = database.OpenRecordset(sql)
+                OpenDatabase(sql)
 
         End Select
 
         Try
             record.Delete()
         Catch ex As Exception
-            MsgBox("その会員番号は存在しません")
+            MsgBox("その番号は存在しません")
         End Try
 
         CloseDatabese()
     End Sub
 
     'そのIDが存在するか調べる
-    Public Function IsExitID(id As String, type As Type)
+    Public Shared Function IsExitID(id As String, type As Type)
+
         Select Case type
             Case Type.user
                 Dim sql = "select * from 会員管理 where 会員番号 = '" & id & "'"
-                record = database.OpenRecordset(sql)
+                OpenDatabase(sql)
                 If record.NoMatch Then
-                    IsExitID = True
-                Else
                     IsExitID = False
+                Else
+                    IsExitID = True
                 End If
 
             Case Else
@@ -119,11 +103,54 @@
         CloseDatabese()
     End Function
 
-    Public Function FetchUser(id As String)
-        FetchUser = New User(id, "ほげ", "男", New Date(1996, 11, 25), Date.Today, "090-1111-1111", "222-0001", "神奈川県厚木市下荻野", "1111", "I")
+    Public Shared Function Fetch(id As String, type As Type)
+
+        Dim obj = Nothing
+        If Not IsExitID(id, type) Then
+            MsgBox("その番号は存在しません")
+            Fetch = obj
+            Exit Function
+        End If
+
+        Select Case type
+            Case Type.user
+                Dim sql = "select * from 会員管理 where 会員番号 = '" & id & "'"
+                OpenDatabase(sql)
+                obj = New User(
+                    record.Fields("会員番号").Value,
+                    record.Fields("氏名").Value,
+                    record.Fields("性別").Value,
+                    record.Fields("生年月日").Value,
+                    record.Fields("入会日").Value,
+                    record.Fields("電話番号").Value,
+                    record.Fields("郵便番号").Value,
+                    record.Fields("住所").Value,
+                    record.Fields("身分証明書種別").Value,
+                    record.Fields("身分証明書番号").Value
+                )
+
+            Case Type.video
+                Dim sql = "select * from ビデオ管理 where ビデオ番号 = '" & id & "'"
+                OpenDatabase(sql)
+                obj = New Video(
+                    record.Fields("ビデオ番号").Value,
+                    record.Fields("タイトル").Value,
+                    record.Fields("販売元").Value,
+                    record.Fields("購入日").Value,
+                    record.Fields("価格").Value,
+                    record.Fields("年齢制限").Value
+                )
+
+            Case Type.loanout
+                OpenDatabase("貸出管理")
+
+        End Select
+
+        CloseDatabese()
+        Fetch = obj
     End Function
 
-    Public Function FetchVideo(id As String)
+    Public Shared Function FetchVideo(id As String)
         FetchVideo = New Video(id, "工房大乱闘", "18禁", "ソフトウェア工房", New Date(2014, 10, 20), 10000)
     End Function
 End Class

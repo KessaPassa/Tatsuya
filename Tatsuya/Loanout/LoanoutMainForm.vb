@@ -6,12 +6,20 @@
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
 
-        Dim items = {IdentityNumber.Text}
-        If Provision.IsEmpty(items) Then
+        Dim id As String = IdentityNumber.Text
+        If Provision.IsEmpty({id}) Then
             Exit Sub
         End If
 
-        LoanoutDetailForm.Init(IdentityNumber.Text)
+        If Not Provision.IsCount({id}, 6) Then
+            Exit Sub
+        End If
+
+        Dim user As User = DBManager.Fetch(id, DBManager.Type.user)
+        If user Is Nothing Then
+            Exit Sub
+        End If
+        LoanoutDetailForm.Init(user)
         LoanoutDetailForm.Show()
         Hide()
     End Sub

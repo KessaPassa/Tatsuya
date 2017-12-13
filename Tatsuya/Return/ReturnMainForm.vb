@@ -2,12 +2,16 @@
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
 
-        Dim items = {VideoId.Text}
-        If Provision.IsEmpty(items) Then
+        Dim id = VideoId.Text
+        If Provision.IsEmpty({id}) Then
             Exit Sub
         End If
 
-        ReturnDetailForm.Init()
+        If Not Provision.IsCount({id}, 6) Then
+            Exit Sub
+        End If
+
+        ReturnDetailForm.Init(id)
         ReturnDetailForm.Show()
         Hide()
     End Sub

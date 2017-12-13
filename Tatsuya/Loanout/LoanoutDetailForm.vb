@@ -2,9 +2,8 @@
 
     Dim age As Integer
 
-    Public Sub Init(id As String)
+    Public Sub Init(user As User)
 
-        Dim user As User = DBManager.instance.FetchUser("123456")
         IdentityNuber.Text = user.id
         UserName.Text = user.name
         Dim split() As String = user.birthday.ToString("yyy/MM/dd").Split("/")
@@ -44,7 +43,7 @@
         Else
             Dim videoId As String = sender.Text
             If videoId.Length = 5 Then
-                Dim video As Video = DBManager.instance.FetchVideo("123456")
+                Dim video As Video = DBManager.FetchVideo("123456")
                 Title.Text = video.title
                 LimitedAge.Text = video.limited_age
                 If LimitedAge.Text = "18禁" Then
@@ -187,9 +186,5 @@
         If table.RowStyles.Count > row Then
             TableLayoutPanel.RowStyles.RemoveAt(row)
         End If
-    End Sub
-
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-
     End Sub
 End Class

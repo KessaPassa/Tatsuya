@@ -2,7 +2,8 @@
 
 Public Class Provision
 
-    Private Const CHECK_MESSAGE = "入力されていない項目があります"
+    Private Const EMPTY_MESSAGE = "入力されていない項目があります"
+    Private Const COUNT_MESSAGE = "文字数が足りない項目があります"
 
     Private Shared Property identityState As String() = {
         "保険証",
@@ -31,7 +32,7 @@ Public Class Provision
     End Sub
 
     '入力されていないか調べる
-    Public Shared Function IsEmpty(items() As Object, Optional message As String = CHECK_MESSAGE)
+    Public Shared Function IsEmpty(items() As Object, Optional message As String = EMPTY_MESSAGE)
 
         For Each item In items
             If item.Equals("") Or item.Equals(-1) Or item.Equals(False) Then
@@ -45,11 +46,13 @@ Public Class Provision
     End Function
 
     '指定した長さより短いか長いか調べる
-    Public Shared Function IsCount(items() As Object, count As Integer)
+    Public Shared Function IsCount(items() As Object, count As Integer, Optional message As String = COUNT_MESSAGE)
 
         For Each item In items
             If item.length < count Then
+                MsgBox(message)
                 IsCount = False
+                Exit Function
             End If
         Next
 

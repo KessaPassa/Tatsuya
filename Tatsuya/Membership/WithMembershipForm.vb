@@ -8,16 +8,25 @@ Public Class WithMembershipForm
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
 
-        Dim items = {IdentityNumber.Text}
-        If Provision.IsEmpty(items) Then
+        Dim id As String = IdentityNumber.Text
+        If Provision.IsEmpty({id}) Then
             Exit Sub
         End If
 
-        Dim id As String = IdentityNumber.Text
-        Dim result As Boolean = DBManager.instance.users(0).IsShownWithdraw()
+        If Not Provision.IsCount({id}, 6) Then
+            Exit Sub
+        End If
+
+
+        Dim user As User = DBManager.Fetch(id, DBManager.Type.user)
+        If user Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim result As Boolean = user.IsShownWithdraw()
         If result Then
             MsgBox("退会処理を行いました", MsgBoxStyle.OkOnly, "退会完了")
-            DBManager.instance.Delete(id, DBManager.Type.user)
+            DBManager.Delete(id, DBManager.Type.user)
             MainForm.Show()
             Hide()
         End If

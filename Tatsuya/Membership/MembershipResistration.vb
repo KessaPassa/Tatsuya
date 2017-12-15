@@ -60,7 +60,7 @@
             Dim r As Random = New Random(seed)
             Dim random As Integer = r.Next(100000)
             randomId = String.Format("{0:D6}", random)
-        Loop Until DBManager.IsExitID(randomId, DBManager.Type.user)
+        Loop Until DBManager.IsExitId(randomId, DBManager.Type.user)
 
 
         Dim user = New User(

@@ -17,16 +17,23 @@
             Exit Sub
         End If
 
-        Dim id As String = IdentityNumber.Text
-        Dim user As User = DBManager.Fetch(id, DBManager.Type.user)
-        If user Is Nothing Then
-            Exit Sub
-        End If
+        'Dim id As String = IdentityNumber.Text
+        'Dim user As User = DBManager.Fetch(id, DBManager.Type.user)
+        'If user Is Nothing Then
+        '    Exit Sub
+        'End If
+
+        'スタブ
+        Dim user = New User(
+            "000000", UserName.Text, "男", New Date(1994, 10, 12), Date.Today,
+            "090-1111-2233", "2220011", "神奈川工科大学",
+            IdentityNumber.Text, IdentityState.SelectedItem
+        )
 
         Dim result As Boolean = user.IsShownWithdraw()
         If result Then
             MsgBox("退会処理を行いました", MsgBoxStyle.OkOnly, "退会完了")
-            DBManager.Delete(id, DBManager.Type.user)
+            'DBManager.Delete(id, DBManager.Type.user)
             MainForm.Show()
             Hide()
         End If

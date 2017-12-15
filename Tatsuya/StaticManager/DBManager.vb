@@ -67,24 +67,27 @@
 
     Public Shared Sub Delete(id As String, type As Type)
 
+        Dim sql As String
         Select Case type
             Case Type.user
-                Dim sql = "select * from 会員管理 where 会員番号 = '" & id & "'"
-                OpenDatabase(sql)
+                sql = "select * from 会員管理 where 会員番号 = '" & id & "'"
 
+            Case Else
+                Exit Sub
         End Select
 
+        OpenDatabase(sql)
         Try
             record.Delete()
         Catch ex As Exception
-            MsgBox("その番号は存在しません")
+            MsgBox("削除に失敗しました")
         End Try
 
         CloseDatabese()
     End Sub
 
     'そのIDが存在するか調べる
-    Public Shared Function IsExitID(id As String, type As Type)
+    Public Shared Function IsExitId(id As String, type As Type)
 
         Dim sql As String
         Select Case type
@@ -93,7 +96,7 @@
 
 
             Case Else
-                IsExitID = False
+                IsExitId = False
                 Exit Function
         End Select
 
@@ -106,9 +109,9 @@
         End Try
 
         If record.NoMatch Then
-            IsExitID = False
+            IsExitId = False
         Else
-            IsExitID = True
+            IsExitId = True
         End If
 
         CloseDatabese()
@@ -117,7 +120,7 @@
     Public Shared Function Fetch(id As String, type As Type)
 
         Dim obj = Nothing
-        If Not IsExitID(id, type) Then
+        If Not IsExitId(id, type) Then
             MsgBox("その番号は存在しません")
             Fetch = obj
             Exit Function

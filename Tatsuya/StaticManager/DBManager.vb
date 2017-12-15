@@ -60,6 +60,7 @@
             record.Update()
         Catch ex As Exception
             MsgBox("データの保存に失敗しました")
+            Application.Exit()
         End Try
 
         CloseDatabese()
@@ -81,6 +82,7 @@
             record.Delete()
         Catch ex As Exception
             MsgBox("削除に失敗しました")
+            Application.Exit()
         End Try
 
         CloseDatabese()

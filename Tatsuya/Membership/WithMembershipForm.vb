@@ -20,6 +20,7 @@ Public Class WithMembershipForm
 
         Dim user As User = DBManager.Fetch(id, DBManager.Type.user)
         If user Is Nothing Then
+            IdentityNumber.Text = ""
             Exit Sub
         End If
 

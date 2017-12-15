@@ -69,7 +69,7 @@
 
         Select Case type
             Case Type.user
-                Dim sql = "select 会員番号 from 会員管理 where 会員番号 = '" & id & "'"
+                Dim sql = "select * from 会員管理 where 会員番号 = '" & id & "'"
                 OpenDatabase(sql)
 
         End Select
@@ -86,19 +86,30 @@
     'そのIDが存在するか調べる
     Public Shared Function IsExitID(id As String, type As Type)
 
+        Dim sql As String
         Select Case type
             Case Type.user
-                Dim sql = "select * from 会員管理 where 会員番号 = '" & id & "'"
-                OpenDatabase(sql)
-                If record.NoMatch Then
-                    IsExitID = False
-                Else
-                    IsExitID = True
-                End If
+                sql = "select 会員番号 from 会員管理 where 会員番号 = '" & id & "'"
+
 
             Case Else
                 IsExitID = False
+                Exit Function
         End Select
+
+        OpenDatabase(sql)
+        Try
+            'IDが存在すると何故かエラー吐くので
+            record.FindFirst(id)
+        Catch ex As Exception
+            '何もしない
+        End Try
+
+        If record.NoMatch Then
+            IsExitID = False
+        Else
+            IsExitID = True
+        End If
 
         CloseDatabese()
     End Function

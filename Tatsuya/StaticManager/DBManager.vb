@@ -89,13 +89,18 @@
     End Sub
 
     'そのIDが存在するか調べる
-    Public Shared Function IsExitId(id As String, type As Type)
+    Public Shared Function IsExitId(id As String, type As Type) As Boolean
 
         Dim sql As String
         Select Case type
             Case Type.user
                 sql = "select 会員番号 from 会員管理 where 会員番号 = '" & id & "'"
 
+            Case Type.video
+                sql = "select ビデオ番号 from ビデオ管理 where ビデオ番号 = '" & id & "'"
+
+            Case Type.loanout
+                sql = "select ビデオ番号 from 貸出管理 where ビデオ番号 = '" & id & "'"
 
             Case Else
                 IsExitId = False
@@ -119,7 +124,7 @@
         CloseDatabese()
     End Function
 
-    Public Shared Function Fetch(id As String, type As Type)
+    Public Shared Function Fetch(id As String, type As Type) As Object
 
         Dim obj = Nothing
         If Not IsExitId(id, type) Then
@@ -159,14 +164,21 @@
 
             Case Type.loanout
                 OpenDatabase("貸出管理")
-
+                Dim sql = "select * from 貸出管理 where 会員番号 = '" & id & "'"
+                OpenDatabase(sql)
+                obj = New Loanout(
+                    record.Fields("会員番号").Value,
+                    record.Fields("ビデオ番号").Value,
+                    record.Fields("貸出日").Value,
+                    record.Fields("貸出日数").Value
+                )
         End Select
 
-        CloseDatabese()
         Fetch = obj
+        CloseDatabese()
     End Function
 
-    Public Shared Function FetchVideo(id As String)
+    Public Shared Function FetchVideo(id As String) As Video
         FetchVideo = New Video(id, "工房大乱闘", "18禁", "ソフトウェア工房", New Date(2014, 10, 20), 10000)
     End Function
 End Class

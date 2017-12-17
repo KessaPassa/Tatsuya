@@ -19,7 +19,8 @@
     End Sub
 
     Private Sub ProductButton_Click(sender As Object, e As EventArgs) Handles ProductButton.Click
-
+        ProductRegisterForm.Show()
+        Hide()
     End Sub
 
     Private Sub MainForm_Actived(sender As Object, e As EventArgs) Handles MyBase.Activated

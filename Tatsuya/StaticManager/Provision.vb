@@ -10,10 +10,10 @@ Public Class Provision
         "免許証"
     }
 
-    Public Shared Property loanoutDays As Loanout() = {
-        New Loanout("1泊2日", 1, 200),
-        New Loanout("2泊3日", 2, 300),
-        New Loanout("6泊7日", 6, 400)
+    Public Shared Property LendDays As LendData() = {
+        New LendData("1泊2日", 1, 200),
+        New LendData("2泊3日", 2, 300),
+        New LendData("6泊7日", 6, 400)
     }
 
     Public Shared Sub AddIdentityState(ByVal comboBox As ComboBox)
@@ -26,8 +26,8 @@ Public Class Provision
 
     Public Shared Sub AddLoanoutDays(ByVal comboBox As ComboBox)
 
-        For i = 0 To loanoutDays.GetLength(0) - 1
-            comboBox.Items.Add(loanoutDays(i).days)
+        For i = 0 To LendDays.GetLength(0) - 1
+            comboBox.Items.Add(LendDays(i).days)
         Next
     End Sub
 

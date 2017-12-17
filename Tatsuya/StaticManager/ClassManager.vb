@@ -30,7 +30,7 @@
     End Function
 
     '退会処理のメッセージを表示し、YesかNoかを返す
-    Public Function IsShownWithdraw()
+    Public Function IsShownWithdraw() As Boolean
         'メッセージボックス表示
         Dim message As String =
             "会員番号: " & id & Environment.NewLine &
@@ -74,7 +74,7 @@ Public Class Video
     End Sub
 End Class
 
-Public Class Loanout
+Public Class LendData
     Property days As String
     Property limit As String
     Property pay As Integer
@@ -85,6 +85,27 @@ Public Class Loanout
         Me.limit = limit
         Me.pay = pay
     End Sub
+End Class
+
+Public Class Loanout
+    Property user_id As String
+    Property video_id As String
+    Property that_date As Date
+    Property days As Integer
+
+    Sub New(user_id As String, video_id As String, that_date As Date, days As Integer)
+
+        Me.user_id = user_id
+        Me.video_id = video_id
+        Me.that_date = that_date
+        Me.days = days
+    End Sub
+
+    Function ConvertUser() As User
+
+        Dim user As User = DBManager.Fetch(user_id, DBManager.Type.user)
+        ConvertUser = user
+    End Function
 End Class
 
 'Public Class Loanout

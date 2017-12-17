@@ -13,20 +13,20 @@
         Man.Checked = False
         Woman.Checked = False
         Tel1.Text = ""
-        YearComboBox.Items.Clear()
-        MonthComboBox.Items.Clear()
-        DayComboBox.Items.Clear()
+        Year.Items.Clear()
+        Month.Items.Clear()
+        Day.Items.Clear()
         AddressNumber.Text = ""
         AddressContent.Text = ""
 
         Provision.AddIdentityState(IdentityState)
         Dim nowYear As Integer = Date.Now.ToString("yyyy")
         For i = 1900 To nowYear
-            YearComboBox.Items.Add(i)
+            Year.Items.Add(i)
         Next
 
         For i = 1 To 12
-            MonthComboBox.Items.Add(i)
+            Month.Items.Add(i)
         Next
 
     End Sub
@@ -43,14 +43,14 @@
 
         '入力チェック
         Dim items = {IdentityNumber.Text, IdentityState.SelectedIndex, UserName.Text,
-            jender, Tel1.Text, YearComboBox.SelectedIndex, MonthComboBox.SelectedIndex,
-            DayComboBox.SelectedIndex, AddressNumber.Text, AddressContent.Text
+            jender, Tel1.Text, Year.SelectedIndex, Month.SelectedIndex,
+            Day.SelectedIndex, AddressNumber.Text, AddressContent.Text
         }
         If Provision.IsEmpty(items) Then
             Exit Sub
         End If
 
-        Dim birthday As String = YearComboBox.SelectedItem.ToString + "年" + MonthComboBox.SelectedItem.ToString + "月" + DayComboBox.SelectedItem.ToString + "日"
+        Dim birthday As String = Year.SelectedItem.ToString + "年" + Month.SelectedItem.ToString + "月" + Day.SelectedItem.ToString + "日"
 
         '同一のIDが生成されないようにする
         Dim seed As Integer = Environment.TickCount
@@ -60,12 +60,12 @@
             Dim r As Random = New Random(seed)
             Dim random As Integer = r.Next(100000)
             randomId = String.Format("{0:D6}", random)
-        Loop Until DBManager.IsExitId(randomId, DBManager.Type.user)
+        Loop While DBManager.IsExitId(randomId, DBManager.Type.user)
 
 
         Dim user = New User(
             randomId, UserName.Text, jender,
-            New Date(YearComboBox.SelectedItem.ToString, MonthComboBox.SelectedItem.ToString, DayComboBox.SelectedItem.ToString),
+            New Date(Year.SelectedItem.ToString, Month.SelectedItem.ToString, Day.SelectedItem.ToString),
             Date.Today, Tel1.Text + "-" + Tel2.Text + "-" + Tel3.Text, AddressNumber.Text,
             AddressContent.Text, IdentityNumber.Text, IdentityState.SelectedItem
         )
@@ -88,7 +88,7 @@
 
         If result = DialogResult.Yes Then
 
-            DBManager.Save(user, DBManager.Type.user)
+            'DBManager.Save(user, DBManager.Type.user)
             MsgBox("あなたの会員番号は「" + user.id + "」です" + Environment.NewLine + "OKボタンで最初の画面へ戻ります", MsgBoxStyle.OkOnly, "会員登録完了")
             MainForm.Show()
             Hide()
@@ -101,45 +101,45 @@
         Me.Hide()
     End Sub
 
-    Private Sub YearComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles YearComboBox.SelectedIndexChanged
-        DayComboBox.Items.Clear()
-        DayComboBox.SelectedText = ""
+    Private Sub YearComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Year.SelectedIndexChanged
+        Day.Items.Clear()
+        Day.SelectedText = ""
 
-        If CType(YearComboBox.SelectedItem, Integer) Mod 4 = 0 & MonthComboBox.SelectedItem = 2 Then
+        If CType(Year.SelectedItem, Integer) Mod 4 = 0 & Month.SelectedItem = 2 Then
             For i = 1 To 29
-                DayComboBox.Items.Add(i)
+                Day.Items.Add(i)
             Next
         Else
             For i = 1 To 28
-                DayComboBox.Items.Add(i)
+                Day.Items.Add(i)
             Next
         End If
     End Sub
 
-    Private Sub MonthComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MonthComboBox.SelectedIndexChanged
-        DayComboBox.Items.Clear()
+    Private Sub MonthComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Month.SelectedIndexChanged
+        Day.Items.Clear()
 
-        Select Case MonthComboBox.SelectedItem
+        Select Case Month.SelectedItem
             Case 2
-                If CType(YearComboBox.SelectedItem, Integer) Mod 4 = 0 Then
+                If CType(Year.SelectedItem, Integer) Mod 4 = 0 Then
                     For i = 1 To 29
-                        DayComboBox.Items.Add(i)
+                        Day.Items.Add(i)
                     Next
                 Else
                     For i = 1 To 28
-                        DayComboBox.Items.Add(i)
+                        Day.Items.Add(i)
                     Next
                 End If
 
 
             Case 4, 6, 9, 11
                 For i = 1 To 30
-                    DayComboBox.Items.Add(i)
+                    Day.Items.Add(i)
                 Next
 
             Case 1, 3, 5, 7, 8, 10, 12
                 For i = 1 To 31
-                    DayComboBox.Items.Add(i)
+                    Day.Items.Add(i)
                 Next
 
 

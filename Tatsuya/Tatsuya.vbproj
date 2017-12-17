@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Product\ProductRegisterForm.Designer.vb">
+      <DependentUpon>ProductRegisterForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductRegisterForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StaticManager\DBManager.vb" />
     <Compile Include="Loanout\LoanoutDetailForm.Designer.vb">
       <DependentUpon>LoanoutDetailForm.vb</DependentUpon>
@@ -174,6 +180,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductRegisterForm.resx">
+      <DependentUpon>ProductRegisterForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Return\ReturnDetailForm.resx">
       <DependentUpon>ReturnDetailForm.vb</DependentUpon>

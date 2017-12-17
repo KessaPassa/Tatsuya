@@ -81,6 +81,7 @@ Partial Class WithIdentityForm
         'IdentityNumber
         '
         Me.IdentityNumber.Location = New System.Drawing.Point(143, 83)
+        Me.IdentityNumber.MaxLength = 20
         Me.IdentityNumber.Name = "IdentityNumber"
         Me.IdentityNumber.Size = New System.Drawing.Size(100, 19)
         Me.IdentityNumber.TabIndex = 6
@@ -88,6 +89,7 @@ Partial Class WithIdentityForm
         'UserName
         '
         Me.UserName.Location = New System.Drawing.Point(143, 158)
+        Me.UserName.MaxLength = 20
         Me.UserName.Name = "UserName"
         Me.UserName.Size = New System.Drawing.Size(100, 19)
         Me.UserName.TabIndex = 7

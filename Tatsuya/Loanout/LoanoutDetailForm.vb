@@ -13,7 +13,7 @@
         VideoNumber.Text = ""
         Title.Text = ""
         LimitedAge.Text = ""
-        NowTime.Text = DateTime.Today.ToString("yyy/MM/dd")
+        NowTime.Text = Date.Today.ToString("yyy/MM/dd")
         LoanoutDays.SelectedIndex = -1
         ReturnDays.Text = ""
         Pay.Text = ""
@@ -21,9 +21,14 @@
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
 
-        MsgBox("貸し出し処理完了しました")
-        MainForm.Show()
-        Hide()
+        '注意メッセージがないなら完了
+        If MessageLabel.Text = "" Then
+            MsgBox("貸し出し処理完了しました")
+            MainForm.Show()
+            Hide()
+        Else
+            MsgBox("貸出できません" & Environment.NewLine & "メッセージの欄を見てください")
+        End If
     End Sub
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
@@ -49,7 +54,7 @@
                 If LimitedAge.Text = "18禁" Then
                     LimitedAge.ForeColor = Color.Red
                     If age < 18 Then
-                        MessageBox.Text = "18歳未満なのでダメです！"
+                        MessageLabel.Text = "18歳未満なのでダメです！"
                     End If
                 Else
                     LimitedAge.ForeColor = Color.Black
@@ -64,13 +69,13 @@
     Private Sub LoanoutDays_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LoanoutDays.SelectedIndexChanged
 
         Dim text = LoanoutDays.SelectedItem
-        Dim loanout = Provision.loanoutDays
-        For i = 0 To loanout.GetLength(0) - 1
-            If text = loanout(i).days Then
-                ReturnDays.Text = DateTime.Today + New TimeSpan(loanout(i).limit, 0, 0, 0)
-                'SumCount.Text = CType(SumCount.Text, Integer) + 1
-                'Pay.Text = loanout(i).pay
-                'SumPay.Text = CType(SumPay.Text, Integer) + Pay.Text
+        Dim lendData = Provision.LendDays
+        For i = 0 To lendData.GetLength(0) - 1
+            If text = lendData(i).days Then
+                ReturnDays.Text = DateTime.Today + New TimeSpan(lendData(i).limit, 0, 0, 0)
+                SumCount.Text = 1 'CType(SumCount.Text, Integer) + 1
+                Pay.Text = lendData(i).pay
+                SumPay.Text = Pay.Text 'CType(SumPay.Text, Integer) + Pay.Text
             End If
         Next
     End Sub

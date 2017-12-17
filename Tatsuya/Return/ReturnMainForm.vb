@@ -11,7 +11,14 @@
             Exit Sub
         End If
 
-        ReturnDetailForm.Init(id)
+        'Dim loanout As Loanout = DBManager.Fetch(id, DBManager.Type.loanout)
+        Dim loanout As Loanout = New Loanout("000005", "101010", New Date(2017, 12, 1), 6)
+        If loanout Is Nothing Then
+            VideoId.Text = ""
+            Exit Sub
+        End If
+
+        ReturnDetailForm.Init(loanout)
         ReturnDetailForm.Show()
         Hide()
     End Sub

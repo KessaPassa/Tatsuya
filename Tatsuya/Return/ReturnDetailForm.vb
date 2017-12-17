@@ -1,35 +1,37 @@
 ﻿Public Class ReturnDetailForm
 
-    Sub Init(id As String)
-        Dim video As Video = DBManager.Fetch(id, DBManager.Type.video)
-        If video Is Nothing Then
-            Exit Sub
-        End If
+    Sub Init(loanout As Loanout)
 
-        VideoIdGroupBox.Text = "ビデオID: " & id
-        IdentityNumber.Text = video.id
-        UserName.Text = "ほげ"
-        ReturnDays.Text = DateTime.Today.ToString("yyy/MM/dd")
+        VideoIdGroupBox.Text = "ビデオID: " & loanout.video_id
+        IdentityNumber.Text = loanout.user_id
+        UserName.Text = loanout.ConvertUser().name
+        ReturnDays.Text = loanout.that_date
     End Sub
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
 
+        Dim title As String
         Dim message As String
-        Dim diff = ReturnDays.Text - DateTime.Today.ToString("yyy/MM/dd")
+        Dim diff = (CType(ReturnDays.Text, Date) - Date.Today).TotalDays
         If diff < 0.0 Then
-            '延滞
-            message = "延滞"
-
-        Else
+            title = "延滞返却"
             message =
-            "返却処理を行います" & Environment.NewLine &
-            "以下の内容でよろしいですか" & Environment.NewLine &
-            "----" & Environment.NewLine &
-            "ビデオID: " & "121212"
+                "以下の内容を確認後、延滞料を徴収してください。" & Environment.NewLine &
+                "----" & Environment.NewLine &
+                "返却予定日" & ReturnDays.Text & Environment.NewLine &
+                "延滞料: " & CType(-diff, Integer) * 300 & "円"
+        Else
+            title = "期限内返却"
+            message =
+                "返却処理を行います" & Environment.NewLine &
+                "以下の内容でよろしいですか" & Environment.NewLine &
+                "----" & Environment.NewLine &
+                VideoIdGroupBox.Text
         End If
 
-        Dim result As DialogResult = MessageBox.Show(message, "期限内返却", MessageBoxButtons.YesNo)
+        Dim result As DialogResult = MessageBox.Show(message, title, MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
+            MsgBox("返却完了" & Environment.NewLine & "----" & Environment.NewLine & VideoIdGroupBox.Text, MsgBoxStyle.OkOnly, "返却処理終了")
             MainForm.Show()
             Hide()
         End If

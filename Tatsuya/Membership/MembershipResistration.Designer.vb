@@ -45,10 +45,10 @@ Partial Class MembershopRegistration
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.DayComboBox = New System.Windows.Forms.ComboBox()
-        Me.MonthComboBox = New System.Windows.Forms.ComboBox()
+        Me.Day = New System.Windows.Forms.ComboBox()
+        Me.Month = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.YearComboBox = New System.Windows.Forms.ComboBox()
+        Me.Year = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.AddressContent = New System.Windows.Forms.TextBox()
@@ -105,7 +105,7 @@ Partial Class MembershopRegistration
         Me.IdentityNumber.MaxLength = 20
         Me.IdentityNumber.Name = "IdentityNumber"
         Me.IdentityNumber.Size = New System.Drawing.Size(120, 19)
-        Me.IdentityNumber.TabIndex = 6
+        Me.IdentityNumber.TabIndex = 1
         '
         'IdentityState
         '
@@ -114,7 +114,7 @@ Partial Class MembershopRegistration
         Me.IdentityState.Location = New System.Drawing.Point(94, 71)
         Me.IdentityState.Name = "IdentityState"
         Me.IdentityState.Size = New System.Drawing.Size(120, 20)
-        Me.IdentityState.TabIndex = 4
+        Me.IdentityState.TabIndex = 2
         '
         'Label2
         '
@@ -145,7 +145,7 @@ Partial Class MembershopRegistration
         Me.Woman.Location = New System.Drawing.Point(156, 73)
         Me.Woman.Name = "Woman"
         Me.Woman.Size = New System.Drawing.Size(35, 16)
-        Me.Woman.TabIndex = 8
+        Me.Woman.TabIndex = 5
         Me.Woman.TabStop = True
         Me.Woman.Text = "女"
         Me.Woman.UseVisualStyleBackColor = True
@@ -165,7 +165,7 @@ Partial Class MembershopRegistration
         Me.Man.Location = New System.Drawing.Point(78, 73)
         Me.Man.Name = "Man"
         Me.Man.Size = New System.Drawing.Size(35, 16)
-        Me.Man.TabIndex = 6
+        Me.Man.TabIndex = 4
         Me.Man.TabStop = True
         Me.Man.Text = "男"
         Me.Man.UseVisualStyleBackColor = True
@@ -176,7 +176,7 @@ Partial Class MembershopRegistration
         Me.UserName.MaxLength = 20
         Me.UserName.Name = "UserName"
         Me.UserName.Size = New System.Drawing.Size(162, 19)
-        Me.UserName.TabIndex = 5
+        Me.UserName.TabIndex = 3
         '
         'Label3
         '
@@ -212,7 +212,7 @@ Partial Class MembershopRegistration
         Me.Tel3.MaxLength = 4
         Me.Tel3.Name = "Tel3"
         Me.Tel3.Size = New System.Drawing.Size(51, 19)
-        Me.Tel3.TabIndex = 11
+        Me.Tel3.TabIndex = 8
         Me.Tel3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Tel2
@@ -224,7 +224,7 @@ Partial Class MembershopRegistration
         Me.Tel2.MaxLength = 4
         Me.Tel2.Name = "Tel2"
         Me.Tel2.Size = New System.Drawing.Size(51, 19)
-        Me.Tel2.TabIndex = 10
+        Me.Tel2.TabIndex = 7
         Me.Tel2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Tel1
@@ -236,7 +236,7 @@ Partial Class MembershopRegistration
         Me.Tel1.MaxLength = 3
         Me.Tel1.Name = "Tel1"
         Me.Tel1.Size = New System.Drawing.Size(51, 19)
-        Me.Tel1.TabIndex = 7
+        Me.Tel1.TabIndex = 6
         Me.Tel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label17
@@ -287,10 +287,10 @@ Partial Class MembershopRegistration
         '
         Me.GroupBox4.Controls.Add(Me.Label9)
         Me.GroupBox4.Controls.Add(Me.Label8)
-        Me.GroupBox4.Controls.Add(Me.DayComboBox)
-        Me.GroupBox4.Controls.Add(Me.MonthComboBox)
+        Me.GroupBox4.Controls.Add(Me.Day)
+        Me.GroupBox4.Controls.Add(Me.Month)
         Me.GroupBox4.Controls.Add(Me.Label7)
-        Me.GroupBox4.Controls.Add(Me.YearComboBox)
+        Me.GroupBox4.Controls.Add(Me.Year)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Location = New System.Drawing.Point(280, 140)
         Me.GroupBox4.Name = "GroupBox4"
@@ -317,23 +317,23 @@ Partial Class MembershopRegistration
         Me.Label8.TabIndex = 12
         Me.Label8.Text = "月"
         '
-        'DayComboBox
+        'Day
         '
-        Me.DayComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.DayComboBox.FormattingEnabled = True
-        Me.DayComboBox.Location = New System.Drawing.Point(173, 30)
-        Me.DayComboBox.Name = "DayComboBox"
-        Me.DayComboBox.Size = New System.Drawing.Size(41, 20)
-        Me.DayComboBox.TabIndex = 11
+        Me.Day.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Day.FormattingEnabled = True
+        Me.Day.Location = New System.Drawing.Point(173, 30)
+        Me.Day.Name = "Day"
+        Me.Day.Size = New System.Drawing.Size(41, 20)
+        Me.Day.TabIndex = 11
         '
-        'MonthComboBox
+        'Month
         '
-        Me.MonthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.MonthComboBox.FormattingEnabled = True
-        Me.MonthComboBox.Location = New System.Drawing.Point(103, 30)
-        Me.MonthComboBox.Name = "MonthComboBox"
-        Me.MonthComboBox.Size = New System.Drawing.Size(41, 20)
-        Me.MonthComboBox.TabIndex = 10
+        Me.Month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Month.FormattingEnabled = True
+        Me.Month.Location = New System.Drawing.Point(103, 30)
+        Me.Month.Name = "Month"
+        Me.Month.Size = New System.Drawing.Size(41, 20)
+        Me.Month.TabIndex = 10
         '
         'Label7
         '
@@ -344,14 +344,14 @@ Partial Class MembershopRegistration
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "年"
         '
-        'YearComboBox
+        'Year
         '
-        Me.YearComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.YearComboBox.FormattingEnabled = True
-        Me.YearComboBox.Location = New System.Drawing.Point(12, 30)
-        Me.YearComboBox.Name = "YearComboBox"
-        Me.YearComboBox.Size = New System.Drawing.Size(62, 20)
-        Me.YearComboBox.TabIndex = 4
+        Me.Year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Year.FormattingEnabled = True
+        Me.Year.Location = New System.Drawing.Point(12, 30)
+        Me.Year.Name = "Year"
+        Me.Year.Size = New System.Drawing.Size(62, 20)
+        Me.Year.TabIndex = 9
         '
         'Label6
         '
@@ -381,7 +381,7 @@ Partial Class MembershopRegistration
         Me.AddressContent.MaxLength = 50
         Me.AddressContent.Name = "AddressContent"
         Me.AddressContent.Size = New System.Drawing.Size(380, 19)
-        Me.AddressContent.TabIndex = 7
+        Me.AddressContent.TabIndex = 13
         '
         'Label13
         '
@@ -419,7 +419,7 @@ Partial Class MembershopRegistration
         Me.AddressNumber.MaxLength = 7
         Me.AddressNumber.Name = "AddressNumber"
         Me.AddressNumber.Size = New System.Drawing.Size(120, 19)
-        Me.AddressNumber.TabIndex = 1
+        Me.AddressNumber.TabIndex = 12
         Me.AddressNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox6
@@ -468,7 +468,7 @@ Partial Class MembershopRegistration
         Me.RegisterButton.Location = New System.Drawing.Point(332, 383)
         Me.RegisterButton.Name = "RegisterButton"
         Me.RegisterButton.Size = New System.Drawing.Size(75, 39)
-        Me.RegisterButton.TabIndex = 7
+        Me.RegisterButton.TabIndex = 14
         Me.RegisterButton.Text = "登録"
         Me.RegisterButton.UseVisualStyleBackColor = True
         '
@@ -477,7 +477,7 @@ Partial Class MembershopRegistration
         Me.CancelButton.Location = New System.Drawing.Point(442, 383)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(75, 39)
-        Me.CancelButton.TabIndex = 8
+        Me.CancelButton.TabIndex = 15
         Me.CancelButton.Text = "キャンセル"
         Me.CancelButton.UseVisualStyleBackColor = True
         '
@@ -529,10 +529,10 @@ Partial Class MembershopRegistration
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents DayComboBox As ComboBox
-    Friend WithEvents MonthComboBox As ComboBox
+    Friend WithEvents Day As ComboBox
+    Friend WithEvents Month As ComboBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents YearComboBox As ComboBox
+    Friend WithEvents Year As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents GroupBox5 As GroupBox

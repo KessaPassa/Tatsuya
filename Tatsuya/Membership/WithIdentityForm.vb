@@ -1,13 +1,7 @@
-﻿Public Class WithIdentityForm
+﻿Public Class WitClosentityForm
 
-    Private Sub WithIdentityForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub WitClosentityForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Provision.AddIdentityState(IdentityState)
-    End Sub
-
-    Public Sub Init()
-        IdentityNumber.Text = ""
-        IdentityState.SelectedIndex = -1
-        UserName.Text = ""
     End Sub
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
@@ -35,13 +29,13 @@
             MsgBox("退会処理を行いました", MsgBoxStyle.OkOnly, "退会完了")
             'DBManager.Delete(id, DBManager.Type.user)
             MainForm.Show()
-            Hide()
+            Close()
         End If
     End Sub
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
         WithdrawalForm.Show()
-        Hide()
+        Close()
     End Sub
 
     Private Sub IdentityNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles IdentityNumber.KeyPress

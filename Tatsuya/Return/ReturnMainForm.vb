@@ -18,14 +18,13 @@
             Exit Sub
         End If
 
-        ReturnDetailForm.Init(loanout)
-        ReturnDetailForm.Show()
-        Hide()
+        ReturnDetailForm.Show(loanout)
+        Close()
     End Sub
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
         MainForm.Show()
-        Hide()
+        Close()
     End Sub
 
     Private Sub VideoId_KeyPress(sender As Object, e As KeyPressEventArgs) Handles VideoId.KeyPress

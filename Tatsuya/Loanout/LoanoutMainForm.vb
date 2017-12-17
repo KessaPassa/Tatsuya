@@ -1,8 +1,6 @@
 ﻿Public Class LoanoutMainForm
 
-    Public Sub Init()
-        IdentityNumber.Text = ""
-    End Sub
+
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
 
@@ -20,14 +18,13 @@
             IdentityNumber.Text = ""
             Exit Sub
         End If
-        LoanoutDetailForm.Init(user)
-        LoanoutDetailForm.Show()
-        Hide()
+        LoanoutDetailForm.Show(user)
+        Close()
     End Sub
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
         MainForm.Show()
-        Hide()
+        Close()
     End Sub
 
     Private Sub IdentityNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles IdentityNumber.KeyPress

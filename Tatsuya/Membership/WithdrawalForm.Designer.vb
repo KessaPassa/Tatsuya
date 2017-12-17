@@ -24,7 +24,7 @@ Partial Class WithdrawalForm
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.WithMembershopButton = New System.Windows.Forms.Button()
-        Me.WithIdentityButton = New System.Windows.Forms.Button()
+        Me.WitClosentityButton = New System.Windows.Forms.Button()
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -46,14 +46,14 @@ Partial Class WithdrawalForm
         Me.WithMembershopButton.Text = "会員証で解約"
         Me.WithMembershopButton.UseVisualStyleBackColor = True
         '
-        'WithIdentityButton
+        'WitClosentityButton
         '
-        Me.WithIdentityButton.Location = New System.Drawing.Point(147, 117)
-        Me.WithIdentityButton.Name = "WithIdentityButton"
-        Me.WithIdentityButton.Size = New System.Drawing.Size(111, 51)
-        Me.WithIdentityButton.TabIndex = 2
-        Me.WithIdentityButton.Text = "身分証で解約"
-        Me.WithIdentityButton.UseVisualStyleBackColor = True
+        Me.WitClosentityButton.Location = New System.Drawing.Point(147, 117)
+        Me.WitClosentityButton.Name = "WitClosentityButton"
+        Me.WitClosentityButton.Size = New System.Drawing.Size(111, 51)
+        Me.WitClosentityButton.TabIndex = 2
+        Me.WitClosentityButton.Text = "身分証で解約"
+        Me.WitClosentityButton.UseVisualStyleBackColor = True
         '
         'CancelButton
         '
@@ -70,7 +70,7 @@ Partial Class WithdrawalForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 261)
         Me.Controls.Add(Me.CancelButton)
-        Me.Controls.Add(Me.WithIdentityButton)
+        Me.Controls.Add(Me.WitClosentityButton)
         Me.Controls.Add(Me.WithMembershopButton)
         Me.Controls.Add(Me.Label1)
         Me.Name = "WithdrawalForm"
@@ -82,6 +82,6 @@ Partial Class WithdrawalForm
 
     Friend WithEvents Label1 As Label
     Friend WithEvents WithMembershopButton As Button
-    Friend WithEvents WithIdentityButton As Button
+    Friend WithEvents WitClosentityButton As Button
     Friend WithEvents CancelButton As Button
 End Class

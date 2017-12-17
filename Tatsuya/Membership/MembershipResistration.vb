@@ -5,32 +5,6 @@
         NowDateTextBox.Text = Date.Now.ToString("yyyy/MM/dd (ddd)")
     End Sub
 
-    'Show
-    Public Sub Init()
-        IdentityNumber.Text = ""
-        IdentityState.Items.Clear()
-        UserName.Text = ""
-        Man.Checked = False
-        Woman.Checked = False
-        Tel1.Text = ""
-        Year.Items.Clear()
-        Month.Items.Clear()
-        Day.Items.Clear()
-        AddressNumber.Text = ""
-        AddressContent.Text = ""
-
-        Provision.AddIdentityState(IdentityState)
-        Dim nowYear As Integer = Date.Now.ToString("yyyy")
-        For i = 1900 To nowYear
-            Year.Items.Add(i)
-        Next
-
-        For i = 1 To 12
-            Month.Items.Add(i)
-        Next
-
-    End Sub
-
     '登録ボタンを押したとき
     Private Sub RegisterButton_Click(sender As Object, e As EventArgs) Handles RegisterButton.Click
 
@@ -91,14 +65,14 @@
             'DBManager.Save(user, DBManager.Type.user)
             MsgBox("あなたの会員番号は「" + user.id + "」です" + Environment.NewLine + "OKボタンで最初の画面へ戻ります", MsgBoxStyle.OkOnly, "会員登録完了")
             MainForm.Show()
-            Hide()
+            Close()
         End If
     End Sub
 
     'キャンセルボタンを押したとき
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
         MembershipForm.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub YearComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Year.SelectedIndexChanged
@@ -151,5 +125,18 @@
         If Provision.OnlyNumeric(e) = False Then
             Exit Sub
         End If
+    End Sub
+
+    Private Sub MembershopRegistration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Provision.AddIdentityState(IdentityState)
+        Dim nowYear As Integer = Date.Now.ToString("yyyy")
+        For i = 1900 To nowYear
+            Year.Items.Add(i)
+        Next
+
+        For i = 1 To 12
+            Month.Items.Add(i)
+        Next
     End Sub
 End Class

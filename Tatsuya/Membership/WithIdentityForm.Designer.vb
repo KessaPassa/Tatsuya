@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class WithIdentityForm
+Partial Class WitClosentityForm
     Inherits System.Windows.Forms.Form
 
     'フォームがコンポーネントの一覧をクリーンアップするために dispose をオーバーライドします。
@@ -121,7 +121,7 @@ Partial Class WithIdentityForm
         Me.OKButton.Text = "OK"
         Me.OKButton.UseVisualStyleBackColor = True
         '
-        'WithIdentityForm
+        'WitClosentityForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -136,7 +136,7 @@ Partial Class WithIdentityForm
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "WithIdentityForm"
+        Me.Name = "WitClosentityForm"
         Me.Text = "身分証明書を使って退会"
         Me.ResumeLayout(False)
         Me.PerformLayout()

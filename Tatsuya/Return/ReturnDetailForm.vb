@@ -1,11 +1,11 @@
 ﻿Public Class ReturnDetailForm
 
-    Sub Init(loanout As Loanout)
-
+    Public Overloads Sub Show(loanout As Loanout)
         VideoIdGroupBox.Text = "ビデオID: " & loanout.video_id
         IdentityNumber.Text = loanout.user_id
         UserName.Text = loanout.ConvertUser().name
         ReturnDays.Text = loanout.that_date
+        MyBase.Show()
     End Sub
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
@@ -33,12 +33,12 @@
         If result = DialogResult.Yes Then
             MsgBox("返却完了" & Environment.NewLine & "----" & Environment.NewLine & VideoIdGroupBox.Text, MsgBoxStyle.OkOnly, "返却処理終了")
             MainForm.Show()
-            Hide()
+            Close()
         End If
     End Sub
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
         ReturnMainForm.Show()
-        Hide()
+        Close()
     End Sub
 End Class

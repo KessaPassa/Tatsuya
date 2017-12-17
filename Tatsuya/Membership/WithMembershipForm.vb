@@ -2,10 +2,6 @@
 
 Public Class WithMembershipForm
 
-    Public Sub Init()
-        IdentityNumber.Text = ""
-    End Sub
-
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
 
         Dim id As String = IdentityNumber.Text
@@ -29,13 +25,13 @@ Public Class WithMembershipForm
             MsgBox("退会処理を行いました", MsgBoxStyle.OkOnly, "退会完了")
             DBManager.Delete(id, DBManager.Type.user)
             MainForm.Show()
-            Hide()
+            Close()
         End If
     End Sub
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
         WithdrawalForm.Show()
-        Hide()
+        Close()
     End Sub
 
     Private Sub IdentityNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles IdentityNumber.KeyPress

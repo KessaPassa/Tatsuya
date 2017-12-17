@@ -3,7 +3,6 @@
     Dim timer As Timer = New Timer
 
     Private Sub LendButton_Click(sender As Object, e As EventArgs) Handles LendButton.Click
-        LoanoutMainForm.Init()
         LoanoutMainForm.Show()
         Hide()
     End Sub
@@ -31,6 +30,11 @@
         AddHandler timer.Tick, New EventHandler(AddressOf RealTimeClock)
         timer.Interval = 1000
         timer.Enabled = True
+    End Sub
+
+    Private Overloads Sub Hide()
+        timer.Enabled = False
+        MyBase.Hide()
     End Sub
 
     Private Sub RealTimeClock(sender As Object, e As EventArgs)

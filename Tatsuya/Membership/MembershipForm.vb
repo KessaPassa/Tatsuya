@@ -2,18 +2,17 @@
 
 
     Private Sub RegisterButton_Click(sender As Object, e As EventArgs) Handles RegisterButton.Click
-        MembershopRegistration.Init()
         MembershopRegistration.Show()
-        Hide()
+        Close()
     End Sub
 
     Private Sub WithDrawalButton_Click(sender As Object, e As EventArgs) Handles WithDrawalButton.Click
         WithdrawalForm.Show()
-        Hide()
+        Close()
     End Sub
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
         MainForm.Show()
-        Hide()
+        Close()
     End Sub
 End Class

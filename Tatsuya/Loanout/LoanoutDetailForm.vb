@@ -2,21 +2,15 @@
 
     Dim age As Integer
 
-    Public Sub Init(user As User)
+    Public Overloads Sub Show(user As User)
 
         IdentityNuber.Text = user.id
         UserName.Text = user.name
         Dim split() As String = user.birthday.ToString("yyy/MM/dd").Split("/")
         age = user.NowAge()
         UserAge.Text = age & "歳"
-
-        VideoNumber.Text = ""
-        Title.Text = ""
-        LimitedAge.Text = ""
         NowTime.Text = Date.Today.ToString("yyy/MM/dd")
-        LoanoutDays.SelectedIndex = -1
-        ReturnDays.Text = ""
-        Pay.Text = ""
+        MyBase.Show()
     End Sub
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
@@ -25,16 +19,15 @@
         If MessageLabel.Text = "" Then
             MsgBox("貸し出し処理完了しました")
             MainForm.Show()
-            Hide()
+            Close()
         Else
             MsgBox("貸出できません" & Environment.NewLine & "メッセージの欄を見てください")
         End If
     End Sub
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
-        LoanoutMainForm.Init()
         LoanoutMainForm.Show()
-        Hide()
+        Close()
     End Sub
 
     Private Sub LoanoutDetailForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -69,7 +62,7 @@
     Private Sub LoanoutDays_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LoanoutDays.SelectedIndexChanged
 
         Dim text = LoanoutDays.SelectedItem
-        Dim lendData = Provision.LendDays
+        Dim lendData = Provision.GetLendDays
         For i = 0 To lendData.GetLength(0) - 1
             If text = lendData(i).days Then
                 ReturnDays.Text = DateTime.Today + New TimeSpan(lendData(i).limit, 0, 0, 0)

@@ -74,19 +74,6 @@ Public Class Video
     End Sub
 End Class
 
-Public Class LendData
-    Property days As String
-    Property limit As String
-    Property pay As Integer
-
-    Sub New(days As String, limit As String, pay As Integer)
-
-        Me.days = days
-        Me.limit = limit
-        Me.pay = pay
-    End Sub
-End Class
-
 Public Class Loanout
     Property user_id As String
     Property video_id As String
@@ -108,17 +95,28 @@ Public Class Loanout
     End Function
 End Class
 
-'Public Class Loanout
-'    Property user_id As String
-'    Property video_id As String
-'    Property days As String
-'    Property limit As Integer
-'    Property pay As Integer
+Public Class LendData
+    Property days As String
+    Property limit As String
+    Property pay As Integer
 
-'    Sub New(user_id As String, video_id As String, days As String, limit As Integer, pay As Integer)
+    Sub New(days As String, limit As String, pay As Integer)
 
-'        Me.days = days
-'        Me.limit = limit
-'        Me.pay = pay
-'    End Sub
-'End Class
+        Me.days = days
+        Me.limit = limit
+        Me.pay = pay
+    End Sub
+End Class
+
+Public Class GenreData
+    Property code As String
+    Property genre As String
+    Property limited_age As String
+
+    Sub New(code As String, genre As String, Optional limited_age As String = "なし")
+
+        Me.code = code
+        Me.genre = genre
+        Me.limited_age = limited_age
+    End Sub
+End Class

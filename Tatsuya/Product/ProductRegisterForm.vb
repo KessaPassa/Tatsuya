@@ -64,10 +64,19 @@
         For i = 0 To Table.ColumnCount - 1
             Table.Controls.Add(objects(i), i, Table.RowCount)
         Next
+
+        TitleBox.Text = ""
+        CountComboBox.SelectedIndex = -1
     End Sub
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
-
+        If Table.RowCount > 1 Then
+            MsgBox("新規タイトルを登録しました", MsgBoxStyle.OkOnly, "商品登録終了")
+            MainForm.Show()
+            Close()
+        Else
+            MsgBox("登録する商品が入力されていません")
+        End If
 
     End Sub
 

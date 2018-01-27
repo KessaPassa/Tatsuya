@@ -43,7 +43,6 @@
             Exit Sub
         End If
 
-        Provision.AddRow(Table)
         Dim code As String = "00"
         Dim genreData = Provision.GetGenre
         For i = 0 To genreData.GetLength(0) - 1
@@ -52,18 +51,15 @@
             End If
         Next
         Dim id As String = code & "01" & String.Format("{0:D2}", CountComboBox.SelectedItem)
-        Dim videoNumber = Provision.CreateLabel(id)
-        Dim genre = Provision.CreateLabel(GenreComboBox.SelectedItem)
-        Dim title = Provision.CreateLabel(TitleBox.Text)
-        Dim count = Provision.CreateLabel(CountComboBox.SelectedItem)
-        Dim arrivalDate = Provision.CreateLabel(New Date(Year.SelectedItem, Month.SelectedItem, Day.SelectedItem).ToString("yyy/MM/dd"))
-        Dim button = Provision.CreateDeletButton
-        AddHandler button.Click, AddressOf Delete
 
-        Dim objects = {videoNumber, genre, title, count, arrivalDate, button}
-        For i = 0 To Table.ColumnCount - 1
-            Table.Controls.Add(objects(i), i, Table.RowCount)
-        Next
+        Dim row = GridView.Rows.Count - 1
+        GridView.Rows.Add()
+        GridView(0, row).Value = id
+        GridView(1, row).Value = GenreComboBox.Text
+        GridView(2, row).Value = TitleBox.Text
+        GridView(3, row).Value = CountComboBox.Text
+        GridView(4, row).Value = New Date(Year.SelectedItem, Month.SelectedItem, Day.SelectedItem).ToString("yyy/MM/dd")
+        GridView(5, row) = Provision.CreateDeletButton
 
         TitleBox.Text = ""
         CountComboBox.SelectedIndex = -1
@@ -124,7 +120,10 @@
         End Select
     End Sub
 
-    Private Sub Delete(sender As Object, e As EventArgs)
-        Provision.Delete(sender, Table)
+    Private Sub Delete(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles GridView.CellContentClick
+        Dim dgv As DataGridView = CType(sender, DataGridView)
+        If GridView.CurrentCell.ColumnIndex = 5 Then
+            GridView.Rows.RemoveAt(GridView.CurrentCell.RowIndex)
+        End If
     End Sub
 End Class

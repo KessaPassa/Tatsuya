@@ -62,7 +62,7 @@
 
         If result = DialogResult.Yes Then
 
-            'DBManager.Save(user, DBManager.Type.user)
+            DBManager.Save(user, DBManager.Type.user)
             MsgBox("あなたの会員番号は「" + user.id + "」です" + Environment.NewLine + "OKボタンで最初の画面へ戻ります", MsgBoxStyle.OkOnly, "会員登録完了")
             MainForm.Show()
             Close()

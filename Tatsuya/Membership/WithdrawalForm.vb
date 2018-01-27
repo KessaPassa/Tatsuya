@@ -11,7 +11,7 @@
     End Sub
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
-        MainForm.Show()
+        MembershipForm.Show()
         Close()
     End Sub
 End Class

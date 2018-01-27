@@ -19,7 +19,7 @@
                 "以下の内容を確認後、延滞料を徴収してください。" & Environment.NewLine &
                 "----" & Environment.NewLine &
                 "返却予定日" & ReturnDays.Text & Environment.NewLine &
-                "延滞料: " & CType(-diff, Integer) * 300 & "円"
+                "延滞料: " & -CType(diff, Integer) * 300 & "円"
         Else
             title = "期限内返却"
             message =

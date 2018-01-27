@@ -1,7 +1,5 @@
 ﻿Public Class LoanoutMainForm
 
-
-
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
 
         Dim id As String = IdentityNumber.Text

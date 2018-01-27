@@ -172,7 +172,7 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51.0!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57.0!))
         Me.TableLayoutPanel.Controls.Add(Me.Pay, 6, 1)
         Me.TableLayoutPanel.Controls.Add(Me.ReturnDays, 5, 1)
         Me.TableLayoutPanel.Controls.Add(Me.Title, 1, 1)
@@ -202,7 +202,7 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel.Size = New System.Drawing.Size(648, 72)
+        Me.TableLayoutPanel.Size = New System.Drawing.Size(654, 72)
         Me.TableLayoutPanel.TabIndex = 10
         '
         'Pay
@@ -293,7 +293,7 @@ Partial Class LoanoutDetailForm
         Me.DeleteButton.Location = New System.Drawing.Point(594, 26)
         Me.DeleteButton.Margin = New System.Windows.Forms.Padding(0)
         Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(52, 22)
+        Me.DeleteButton.Size = New System.Drawing.Size(58, 22)
         Me.DeleteButton.TabIndex = 23
         Me.DeleteButton.Text = "✖"
         Me.DeleteButton.UseVisualStyleBackColor = True
@@ -470,7 +470,7 @@ Partial Class LoanoutDetailForm
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(597, 2)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(46, 22)
+        Me.Label5.Size = New System.Drawing.Size(52, 22)
         Me.Label5.TabIndex = 24
         Me.Label5.Text = "削除"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter

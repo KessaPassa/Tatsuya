@@ -46,7 +46,15 @@ Partial Class ProductRegisterForm
         Me.Table = New System.Windows.Forms.TableLayoutPanel()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.CountComboBox = New System.Windows.Forms.ComboBox()
+        Me.GridView = New System.Windows.Forms.DataGridView()
+        Me.CellVideoID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cell_Genre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cell_Title = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cell_Count = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cell_Arrival = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cell_Delete = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Table.SuspendLayout()
+        CType(Me.GridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -198,7 +206,7 @@ Partial Class ProductRegisterForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(62, 1)
+        Me.Label9.Location = New System.Drawing.Point(63, 1)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(56, 22)
         Me.Label9.TabIndex = 1
@@ -211,9 +219,9 @@ Partial Class ProductRegisterForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(125, 1)
+        Me.Label10.Location = New System.Drawing.Point(126, 1)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(230, 22)
+        Me.Label10.Size = New System.Drawing.Size(221, 22)
         Me.Label10.TabIndex = 2
         Me.Label10.Text = "タイトル"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -224,7 +232,7 @@ Partial Class ProductRegisterForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(362, 1)
+        Me.Label11.Location = New System.Drawing.Point(354, 1)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(36, 22)
         Me.Label11.TabIndex = 3
@@ -237,7 +245,7 @@ Partial Class ProductRegisterForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(405, 1)
+        Me.Label5.Location = New System.Drawing.Point(397, 1)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 22)
         Me.Label5.TabIndex = 12
@@ -250,9 +258,9 @@ Partial Class ProductRegisterForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(491, 1)
+        Me.Label14.Location = New System.Drawing.Point(483, 1)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(42, 22)
+        Me.Label14.Size = New System.Drawing.Size(50, 22)
         Me.Label14.TabIndex = 13
         Me.Label14.Text = "削除"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -263,10 +271,10 @@ Partial Class ProductRegisterForm
         Me.Table.ColumnCount = 6
         Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.96748!))
         Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.03252!))
-        Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236.0!))
+        Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 227.0!))
         Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42.0!))
         Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85.0!))
-        Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55.0!))
         Me.Table.Controls.Add(Me.Label14, 5, 0)
         Me.Table.Controls.Add(Me.Label16, 0, 0)
         Me.Table.Controls.Add(Me.Label11, 3, 0)
@@ -288,7 +296,7 @@ Partial Class ProductRegisterForm
         Me.Label16.AutoSize = True
         Me.Label16.Location = New System.Drawing.Point(4, 1)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(51, 22)
+        Me.Label16.Size = New System.Drawing.Size(52, 22)
         Me.Label16.TabIndex = 14
         Me.Label16.Text = "ビデオID"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -302,11 +310,68 @@ Partial Class ProductRegisterForm
         Me.CountComboBox.Size = New System.Drawing.Size(41, 20)
         Me.CountComboBox.TabIndex = 30
         '
+        'GridView
+        '
+        Me.GridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.GridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CellVideoID, Me.Cell_Genre, Me.Cell_Title, Me.Cell_Count, Me.Cell_Arrival, Me.Cell_Delete})
+        Me.GridView.Location = New System.Drawing.Point(12, 236)
+        Me.GridView.Name = "GridView"
+        Me.GridView.ReadOnly = True
+        Me.GridView.RowTemplate.Height = 21
+        Me.GridView.Size = New System.Drawing.Size(537, 150)
+        Me.GridView.TabIndex = 31
+        '
+        'CellVideoID
+        '
+        Me.CellVideoID.HeaderText = "ビデオID"
+        Me.CellVideoID.Name = "CellVideoID"
+        Me.CellVideoID.ReadOnly = True
+        Me.CellVideoID.Width = 65
+        '
+        'Cell_Genre
+        '
+        Me.Cell_Genre.HeaderText = "ジャンル"
+        Me.Cell_Genre.Name = "Cell_Genre"
+        Me.Cell_Genre.ReadOnly = True
+        Me.Cell_Genre.Width = 60
+        '
+        'Cell_Title
+        '
+        Me.Cell_Title.HeaderText = "タイトル"
+        Me.Cell_Title.Name = "Cell_Title"
+        Me.Cell_Title.ReadOnly = True
+        Me.Cell_Title.Width = 220
+        '
+        'Cell_Count
+        '
+        Me.Cell_Count.HeaderText = "本数"
+        Me.Cell_Count.Name = "Cell_Count"
+        Me.Cell_Count.ReadOnly = True
+        Me.Cell_Count.Width = 35
+        '
+        'Cell_Arrival
+        '
+        Me.Cell_Arrival.HeaderText = "入荷日"
+        Me.Cell_Arrival.Name = "Cell_Arrival"
+        Me.Cell_Arrival.ReadOnly = True
+        Me.Cell_Arrival.Width = 80
+        '
+        'Cell_Delete
+        '
+        Me.Cell_Delete.HeaderText = "削除"
+        Me.Cell_Delete.Name = "Cell_Delete"
+        Me.Cell_Delete.ReadOnly = True
+        Me.Cell_Delete.Width = 30
+        '
         'ProductRegisterForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(564, 441)
+        Me.Controls.Add(Me.GridView)
         Me.Controls.Add(Me.CountComboBox)
         Me.Controls.Add(Me.Table)
         Me.Controls.Add(Me.Label15)
@@ -329,6 +394,7 @@ Partial Class ProductRegisterForm
         Me.Text = "商品登録"
         Me.Table.ResumeLayout(False)
         Me.Table.PerformLayout()
+        CType(Me.GridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -357,4 +423,11 @@ Partial Class ProductRegisterForm
     Friend WithEvents Table As TableLayoutPanel
     Friend WithEvents Label16 As Label
     Friend WithEvents CountComboBox As ComboBox
+    Friend WithEvents GridView As DataGridView
+    Friend WithEvents CellVideoID As DataGridViewTextBoxColumn
+    Friend WithEvents Cell_Genre As DataGridViewTextBoxColumn
+    Friend WithEvents Cell_Title As DataGridViewTextBoxColumn
+    Friend WithEvents Cell_Count As DataGridViewTextBoxColumn
+    Friend WithEvents Cell_Arrival As DataGridViewTextBoxColumn
+    Friend WithEvents Cell_Delete As DataGridViewTextBoxColumn
 End Class

@@ -26,12 +26,21 @@ Public Class Provision
         New GenreData("07", "ラブロマンス"),
         New GenreData("08", "ラブストーリー"),
         New GenreData("09", "ホラー"),
-        New GenreData("21", "アクション(R)", "15"),
-        New GenreData("22", "戦争(R)", "18"),
-        New GenreData("23", "ホラー(R)", "18"),
+        New GenreData("21", "アクション(R)", "15禁"),
+        New GenreData("22", "戦争(R)", "18禁"),
+        New GenreData("23", "ホラー(R)", "18禁"),
         New GenreData("99", "その他")
     }
 
+    Public Shared Function SearchGenre(code As String) As GenreData
+        If code.Length = 2 Then
+            For Each item In GetGenre
+                If code = item.code Then
+                    SearchGenre = item
+                End If
+            Next
+        End If
+    End Function
 
     Public Shared Sub AddIdentityState(ByVal comboBox As ComboBox)
 

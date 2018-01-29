@@ -48,7 +48,6 @@
                 record.Fields("販売元").Value = video.purchace_company
                 record.Fields("購入日").Value = video.purchace_day
                 record.Fields("価格").Value = video.pay
-                record.Fields("年齢制限").Value = video.limited_age
 
             Case Type.loanout
                 Dim loanout = CType(obj, Loanout)
@@ -100,7 +99,7 @@
                 sql = "select ビデオ番号 from ビデオ管理 where ビデオ番号 = '" & id & "'"
 
             Case Type.loanout
-                sql = "select ビデオ番号 from 貸出管理 where ビデオ番号 = '" & id & "'"
+                sql = "select 会員番号 from 貸出管理 where 会員番号 = '" & id & "'"
 
             Case Else
                 IsExitId = False
@@ -158,12 +157,10 @@
                     record.Fields("タイトル").Value,
                     record.Fields("販売元").Value,
                     record.Fields("購入日").Value,
-                    record.Fields("価格").Value,
-                    record.Fields("年齢制限").Value
-                )
+                    record.Fields("価格").Value
+)
 
             Case Type.loanout
-                OpenDatabase("貸出管理")
                 Dim sql = "select * from 貸出管理 where 会員番号 = '" & id & "'"
                 OpenDatabase(sql)
                 obj = New Loanout(
@@ -176,9 +173,5 @@
 
         Fetch = obj
         CloseDatabese()
-    End Function
-
-    Public Shared Function FetchVideo(id As String) As Video
-        FetchVideo = New Video(id, "工房大乱闘", "18禁", "ソフトウェア工房", New Date(2014, 10, 20), 10000)
     End Function
 End Class

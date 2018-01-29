@@ -33,27 +33,18 @@ Partial Class LoanoutDetailForm
         Me.MessageLabel = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.Pay = New System.Windows.Forms.Label()
-        Me.ReturnDays = New System.Windows.Forms.Label()
-        Me.Title = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.DeleteButton = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.CountLabel = New System.Windows.Forms.Label()
         Me.SumCount = New System.Windows.Forms.Label()
         Me.PayLabel = New System.Windows.Forms.Label()
         Me.SumPay = New System.Windows.Forms.Label()
-        Me.VideoNumber = New System.Windows.Forms.TextBox()
-        Me.CountLabel = New System.Windows.Forms.Label()
-        Me.LimitedAge = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.NowTime = New System.Windows.Forms.Label()
-        Me.LoanoutDays = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.OKButton = New System.Windows.Forms.Button()
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
@@ -165,85 +156,35 @@ Partial Class LoanoutDetailForm
         Me.TableLayoutPanel.AutoSize = True
         Me.TableLayoutPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset
         Me.TableLayoutPanel.ColumnCount = 8
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.52427!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.47573!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.80851!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.19149!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60.0!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74.0!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72.0!))
-        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79.0!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79.0!))
         Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57.0!))
-        Me.TableLayoutPanel.Controls.Add(Me.Pay, 6, 1)
-        Me.TableLayoutPanel.Controls.Add(Me.ReturnDays, 5, 1)
-        Me.TableLayoutPanel.Controls.Add(Me.Title, 1, 1)
+        Me.TableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
         Me.TableLayoutPanel.Controls.Add(Me.Label14, 6, 0)
         Me.TableLayoutPanel.Controls.Add(Me.Label13, 5, 0)
         Me.TableLayoutPanel.Controls.Add(Me.Label12, 4, 0)
-        Me.TableLayoutPanel.Controls.Add(Me.DeleteButton, 7, 1)
         Me.TableLayoutPanel.Controls.Add(Me.Label11, 3, 0)
         Me.TableLayoutPanel.Controls.Add(Me.Label10, 2, 0)
         Me.TableLayoutPanel.Controls.Add(Me.Label9, 1, 0)
         Me.TableLayoutPanel.Controls.Add(Me.Label8, 0, 0)
-        Me.TableLayoutPanel.Controls.Add(Me.SumCount, 4, 2)
-        Me.TableLayoutPanel.Controls.Add(Me.PayLabel, 5, 2)
-        Me.TableLayoutPanel.Controls.Add(Me.SumPay, 6, 2)
-        Me.TableLayoutPanel.Controls.Add(Me.VideoNumber, 0, 1)
-        Me.TableLayoutPanel.Controls.Add(Me.CountLabel, 3, 2)
-        Me.TableLayoutPanel.Controls.Add(Me.LimitedAge, 2, 1)
-        Me.TableLayoutPanel.Controls.Add(Me.Label4, 0, 2)
-        Me.TableLayoutPanel.Controls.Add(Me.NowTime, 3, 1)
-        Me.TableLayoutPanel.Controls.Add(Me.LoanoutDays, 4, 1)
         Me.TableLayoutPanel.Controls.Add(Me.Label5, 7, 0)
+        Me.TableLayoutPanel.Controls.Add(Me.CountLabel, 3, 1)
+        Me.TableLayoutPanel.Controls.Add(Me.SumCount, 4, 1)
+        Me.TableLayoutPanel.Controls.Add(Me.PayLabel, 5, 1)
+        Me.TableLayoutPanel.Controls.Add(Me.SumPay, 6, 1)
         Me.TableLayoutPanel.Location = New System.Drawing.Point(20, 186)
         Me.TableLayoutPanel.MaximumSize = New System.Drawing.Size(0, 192)
         Me.TableLayoutPanel.Name = "TableLayoutPanel"
-        Me.TableLayoutPanel.RowCount = 3
+        Me.TableLayoutPanel.RowCount = 2
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel.Size = New System.Drawing.Size(654, 72)
+        Me.TableLayoutPanel.Size = New System.Drawing.Size(641, 72)
         Me.TableLayoutPanel.TabIndex = 10
-        '
-        'Pay
-        '
-        Me.Pay.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Pay.AutoSize = True
-        Me.Pay.Location = New System.Drawing.Point(531, 26)
-        Me.Pay.Name = "Pay"
-        Me.Pay.Size = New System.Drawing.Size(58, 22)
-        Me.Pay.TabIndex = 20
-        Me.Pay.Text = "　"
-        Me.Pay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'ReturnDays
-        '
-        Me.ReturnDays.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ReturnDays.AutoSize = True
-        Me.ReturnDays.Location = New System.Drawing.Point(450, 26)
-        Me.ReturnDays.Name = "ReturnDays"
-        Me.ReturnDays.Size = New System.Drawing.Size(73, 22)
-        Me.ReturnDays.TabIndex = 19
-        Me.ReturnDays.Text = "　"
-        Me.ReturnDays.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Title
-        '
-        Me.Title.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Title.AutoEllipsis = True
-        Me.Title.AutoSize = True
-        Me.Title.Location = New System.Drawing.Point(81, 26)
-        Me.Title.Name = "Title"
-        Me.Title.Size = New System.Drawing.Size(149, 22)
-        Me.Title.TabIndex = 16
-        Me.Title.Text = "　"
-        Me.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label14
         '
@@ -251,9 +192,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(531, 2)
+        Me.Label14.Location = New System.Drawing.Point(523, 2)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(58, 22)
+        Me.Label14.Size = New System.Drawing.Size(51, 33)
         Me.Label14.TabIndex = 6
         Me.Label14.Text = "料金"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -264,9 +205,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(450, 2)
+        Me.Label13.Location = New System.Drawing.Point(442, 2)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(73, 22)
+        Me.Label13.Size = New System.Drawing.Size(73, 33)
         Me.Label13.TabIndex = 5
         Me.Label13.Text = "返却日"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -279,24 +220,10 @@ Partial Class LoanoutDetailForm
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(376, 2)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(66, 22)
+        Me.Label12.Size = New System.Drawing.Size(58, 33)
         Me.Label12.TabIndex = 4
         Me.Label12.Text = "貸出日数"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'DeleteButton
-        '
-        Me.DeleteButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DeleteButton.ForeColor = System.Drawing.Color.DarkRed
-        Me.DeleteButton.Location = New System.Drawing.Point(594, 26)
-        Me.DeleteButton.Margin = New System.Windows.Forms.Padding(0)
-        Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(58, 22)
-        Me.DeleteButton.TabIndex = 23
-        Me.DeleteButton.Text = "✖"
-        Me.DeleteButton.UseVisualStyleBackColor = True
         '
         'Label11
         '
@@ -304,9 +231,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(300, 2)
+        Me.Label11.Location = New System.Drawing.Point(290, 2)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(68, 22)
+        Me.Label11.Size = New System.Drawing.Size(78, 33)
         Me.Label11.TabIndex = 3
         Me.Label11.Text = "貸出日"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -317,9 +244,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(238, 2)
+        Me.Label10.Location = New System.Drawing.Point(228, 2)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(54, 22)
+        Me.Label10.Size = New System.Drawing.Size(54, 33)
         Me.Label10.TabIndex = 2
         Me.Label10.Text = "年齢制限"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -330,9 +257,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(81, 2)
+        Me.Label9.Location = New System.Drawing.Point(65, 2)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(149, 22)
+        Me.Label9.Size = New System.Drawing.Size(155, 33)
         Me.Label9.TabIndex = 1
         Me.Label9.Text = "タイトル"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -345,10 +272,36 @@ Partial Class LoanoutDetailForm
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(5, 2)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(68, 22)
+        Me.Label8.Size = New System.Drawing.Size(52, 33)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "ビデオID"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(582, 2)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(54, 33)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "削除"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'CountLabel
+        '
+        Me.CountLabel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CountLabel.AutoSize = True
+        Me.CountLabel.Location = New System.Drawing.Point(290, 37)
+        Me.CountLabel.Name = "CountLabel"
+        Me.CountLabel.Size = New System.Drawing.Size(78, 33)
+        Me.CountLabel.TabIndex = 7
+        Me.CountLabel.Text = "貸出本数"
+        Me.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'SumCount
         '
@@ -356,9 +309,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SumCount.AutoSize = True
-        Me.SumCount.Location = New System.Drawing.Point(376, 50)
+        Me.SumCount.Location = New System.Drawing.Point(376, 37)
         Me.SumCount.Name = "SumCount"
-        Me.SumCount.Size = New System.Drawing.Size(66, 20)
+        Me.SumCount.Size = New System.Drawing.Size(58, 33)
         Me.SumCount.TabIndex = 8
         Me.SumCount.Text = "0"
         Me.SumCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -369,9 +322,9 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PayLabel.AutoSize = True
-        Me.PayLabel.Location = New System.Drawing.Point(450, 50)
+        Me.PayLabel.Location = New System.Drawing.Point(442, 37)
         Me.PayLabel.Name = "PayLabel"
-        Me.PayLabel.Size = New System.Drawing.Size(73, 20)
+        Me.PayLabel.Size = New System.Drawing.Size(73, 33)
         Me.PayLabel.TabIndex = 9
         Me.PayLabel.Text = "料金合計"
         Me.PayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -382,98 +335,12 @@ Partial Class LoanoutDetailForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SumPay.AutoSize = True
-        Me.SumPay.Location = New System.Drawing.Point(531, 50)
+        Me.SumPay.Location = New System.Drawing.Point(523, 37)
         Me.SumPay.Name = "SumPay"
-        Me.SumPay.Size = New System.Drawing.Size(58, 20)
+        Me.SumPay.Size = New System.Drawing.Size(51, 33)
         Me.SumPay.TabIndex = 10
         Me.SumPay.Text = "0"
         Me.SumPay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'VideoNumber
-        '
-        Me.VideoNumber.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.VideoNumber.Location = New System.Drawing.Point(2, 26)
-        Me.VideoNumber.Margin = New System.Windows.Forms.Padding(0)
-        Me.VideoNumber.MaxLength = 6
-        Me.VideoNumber.Name = "VideoNumber"
-        Me.VideoNumber.Size = New System.Drawing.Size(74, 19)
-        Me.VideoNumber.TabIndex = 15
-        Me.VideoNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'CountLabel
-        '
-        Me.CountLabel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CountLabel.AutoSize = True
-        Me.CountLabel.Location = New System.Drawing.Point(300, 50)
-        Me.CountLabel.Name = "CountLabel"
-        Me.CountLabel.Size = New System.Drawing.Size(68, 20)
-        Me.CountLabel.TabIndex = 7
-        Me.CountLabel.Text = "貸出本数"
-        Me.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LimitedAge
-        '
-        Me.LimitedAge.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LimitedAge.AutoSize = True
-        Me.LimitedAge.Location = New System.Drawing.Point(238, 26)
-        Me.LimitedAge.Name = "LimitedAge"
-        Me.LimitedAge.Size = New System.Drawing.Size(54, 22)
-        Me.LimitedAge.TabIndex = 17
-        Me.LimitedAge.Text = "　"
-        Me.LimitedAge.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(5, 50)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(0, 12)
-        Me.Label4.TabIndex = 11
-        '
-        'NowTime
-        '
-        Me.NowTime.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NowTime.AutoSize = True
-        Me.NowTime.Location = New System.Drawing.Point(300, 26)
-        Me.NowTime.Name = "NowTime"
-        Me.NowTime.Size = New System.Drawing.Size(68, 22)
-        Me.NowTime.TabIndex = 21
-        Me.NowTime.Text = "　"
-        Me.NowTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LoanoutDays
-        '
-        Me.LoanoutDays.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LoanoutDays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.LoanoutDays.FormattingEnabled = True
-        Me.LoanoutDays.Location = New System.Drawing.Point(373, 26)
-        Me.LoanoutDays.Margin = New System.Windows.Forms.Padding(0)
-        Me.LoanoutDays.Name = "LoanoutDays"
-        Me.LoanoutDays.Size = New System.Drawing.Size(72, 20)
-        Me.LoanoutDays.TabIndex = 22
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(597, 2)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 22)
-        Me.Label5.TabIndex = 24
-        Me.Label5.Text = "削除"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'OKButton
         '
@@ -497,7 +364,7 @@ Partial Class LoanoutDetailForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(684, 441)
+        Me.ClientSize = New System.Drawing.Size(686, 441)
         Me.Controls.Add(Me.CancelButton)
         Me.Controls.Add(Me.OKButton)
         Me.Controls.Add(Me.TableLayoutPanel)
@@ -538,15 +405,6 @@ Partial Class LoanoutDetailForm
     Friend WithEvents PayLabel As Label
     Friend WithEvents SumCount As Label
     Friend WithEvents CountLabel As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents VideoNumber As TextBox
-    Friend WithEvents Title As Label
-    Friend WithEvents Pay As Label
-    Friend WithEvents ReturnDays As Label
-    Friend WithEvents LimitedAge As Label
-    Friend WithEvents NowTime As Label
-    Friend WithEvents LoanoutDays As ComboBox
-    Friend WithEvents DeleteButton As Button
     Friend WithEvents MessageLabel As Label
     Friend WithEvents OKButton As Button
     Friend WithEvents CancelButton As Button

@@ -53,6 +53,11 @@ Partial Class ProductRegisterForm
         Me.Cell_Count = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cell_Arrival = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cell_Delete = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CompanyText = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PayText = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.Table.SuspendLayout()
         CType(Me.GridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -60,7 +65,7 @@ Partial Class ProductRegisterForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(34, 41)
+        Me.Label1.Location = New System.Drawing.Point(20, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 12)
         Me.Label1.TabIndex = 12
@@ -68,16 +73,16 @@ Partial Class ProductRegisterForm
         '
         'TitleBox
         '
-        Me.TitleBox.Location = New System.Drawing.Point(90, 38)
+        Me.TitleBox.Location = New System.Drawing.Point(76, 41)
         Me.TitleBox.MaxLength = 100
         Me.TitleBox.Name = "TitleBox"
-        Me.TitleBox.Size = New System.Drawing.Size(375, 19)
+        Me.TitleBox.Size = New System.Drawing.Size(473, 19)
         Me.TitleBox.TabIndex = 13
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(34, 91)
+        Me.Label2.Location = New System.Drawing.Point(20, 94)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(42, 12)
         Me.Label2.TabIndex = 14
@@ -87,7 +92,7 @@ Partial Class ProductRegisterForm
         '
         Me.GenreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.GenreComboBox.FormattingEnabled = True
-        Me.GenreComboBox.Location = New System.Drawing.Point(90, 88)
+        Me.GenreComboBox.Location = New System.Drawing.Point(76, 91)
         Me.GenreComboBox.Name = "GenreComboBox"
         Me.GenreComboBox.Size = New System.Drawing.Size(103, 20)
         Me.GenreComboBox.TabIndex = 15
@@ -95,7 +100,7 @@ Partial Class ProductRegisterForm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(209, 91)
+        Me.Label3.Location = New System.Drawing.Point(195, 94)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(29, 12)
         Me.Label3.TabIndex = 16
@@ -104,7 +109,7 @@ Partial Class ProductRegisterForm
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(32, 138)
+        Me.Label6.Location = New System.Drawing.Point(18, 141)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 12)
         Me.Label6.TabIndex = 18
@@ -113,7 +118,7 @@ Partial Class ProductRegisterForm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(299, 139)
+        Me.Label7.Location = New System.Drawing.Point(285, 142)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(17, 12)
         Me.Label7.TabIndex = 21
@@ -122,7 +127,7 @@ Partial Class ProductRegisterForm
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(229, 139)
+        Me.Label12.Location = New System.Drawing.Point(215, 142)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(17, 12)
         Me.Label12.TabIndex = 24
@@ -132,7 +137,7 @@ Partial Class ProductRegisterForm
         '
         Me.Day.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Day.FormattingEnabled = True
-        Me.Day.Location = New System.Drawing.Point(252, 135)
+        Me.Day.Location = New System.Drawing.Point(238, 138)
         Me.Day.Name = "Day"
         Me.Day.Size = New System.Drawing.Size(41, 20)
         Me.Day.TabIndex = 23
@@ -141,7 +146,7 @@ Partial Class ProductRegisterForm
         '
         Me.Month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Month.FormattingEnabled = True
-        Me.Month.Location = New System.Drawing.Point(182, 135)
+        Me.Month.Location = New System.Drawing.Point(168, 138)
         Me.Month.Name = "Month"
         Me.Month.Size = New System.Drawing.Size(41, 20)
         Me.Month.TabIndex = 22
@@ -149,7 +154,7 @@ Partial Class ProductRegisterForm
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(159, 139)
+        Me.Label13.Location = New System.Drawing.Point(145, 142)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(17, 12)
         Me.Label13.TabIndex = 19
@@ -159,14 +164,14 @@ Partial Class ProductRegisterForm
         '
         Me.Year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Year.FormattingEnabled = True
-        Me.Year.Location = New System.Drawing.Point(91, 135)
+        Me.Year.Location = New System.Drawing.Point(77, 138)
         Me.Year.Name = "Year"
         Me.Year.Size = New System.Drawing.Size(62, 20)
         Me.Year.TabIndex = 20
         '
         'AddButton
         '
-        Me.AddButton.Location = New System.Drawing.Point(474, 133)
+        Me.AddButton.Location = New System.Drawing.Point(474, 137)
         Me.AddButton.Name = "AddButton"
         Me.AddButton.Size = New System.Drawing.Size(75, 23)
         Me.AddButton.TabIndex = 25
@@ -194,7 +199,7 @@ Partial Class ProductRegisterForm
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(299, 91)
+        Me.Label15.Location = New System.Drawing.Point(285, 94)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(17, 12)
         Me.Label15.TabIndex = 28
@@ -206,9 +211,9 @@ Partial Class ProductRegisterForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(63, 1)
+        Me.Label9.Location = New System.Drawing.Point(60, 1)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(56, 22)
+        Me.Label9.Size = New System.Drawing.Size(53, 22)
         Me.Label9.TabIndex = 1
         Me.Label9.Text = "ジャンル"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -219,7 +224,7 @@ Partial Class ProductRegisterForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(126, 1)
+        Me.Label10.Location = New System.Drawing.Point(120, 1)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(221, 22)
         Me.Label10.TabIndex = 2
@@ -232,7 +237,7 @@ Partial Class ProductRegisterForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(354, 1)
+        Me.Label11.Location = New System.Drawing.Point(348, 1)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(36, 22)
         Me.Label11.TabIndex = 3
@@ -245,7 +250,7 @@ Partial Class ProductRegisterForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(397, 1)
+        Me.Label5.Location = New System.Drawing.Point(391, 1)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 22)
         Me.Label5.TabIndex = 12
@@ -258,9 +263,9 @@ Partial Class ProductRegisterForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(483, 1)
+        Me.Label14.Location = New System.Drawing.Point(477, 1)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(50, 22)
+        Me.Label14.Size = New System.Drawing.Size(56, 22)
         Me.Label14.TabIndex = 13
         Me.Label14.Text = "削除"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -274,7 +279,7 @@ Partial Class ProductRegisterForm
         Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 227.0!))
         Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42.0!))
         Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85.0!))
-        Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55.0!))
+        Me.Table.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
         Me.Table.Controls.Add(Me.Label14, 5, 0)
         Me.Table.Controls.Add(Me.Label16, 0, 0)
         Me.Table.Controls.Add(Me.Label11, 3, 0)
@@ -296,7 +301,7 @@ Partial Class ProductRegisterForm
         Me.Label16.AutoSize = True
         Me.Label16.Location = New System.Drawing.Point(4, 1)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(52, 22)
+        Me.Label16.Size = New System.Drawing.Size(49, 22)
         Me.Label16.TabIndex = 14
         Me.Label16.Text = "ビデオID"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -305,7 +310,7 @@ Partial Class ProductRegisterForm
         '
         Me.CountComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CountComboBox.FormattingEnabled = True
-        Me.CountComboBox.Location = New System.Drawing.Point(252, 88)
+        Me.CountComboBox.Location = New System.Drawing.Point(238, 91)
         Me.CountComboBox.Name = "CountComboBox"
         Me.CountComboBox.Size = New System.Drawing.Size(41, 20)
         Me.CountComboBox.TabIndex = 30
@@ -366,11 +371,59 @@ Partial Class ProductRegisterForm
         Me.Cell_Delete.ReadOnly = True
         Me.Cell_Delete.Width = 30
         '
+        'CompanyText
+        '
+        Me.CompanyText.Location = New System.Drawing.Point(385, 91)
+        Me.CompanyText.MaxLength = 100
+        Me.CompanyText.Name = "CompanyText"
+        Me.CompanyText.Size = New System.Drawing.Size(164, 19)
+        Me.CompanyText.TabIndex = 32
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(330, 94)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 12)
+        Me.Label4.TabIndex = 33
+        Me.Label4.Text = "製造会社"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(330, 142)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(29, 12)
+        Me.Label8.TabIndex = 35
+        Me.Label8.Text = "値段"
+        '
+        'PayText
+        '
+        Me.PayText.Location = New System.Drawing.Point(369, 139)
+        Me.PayText.MaxLength = 100
+        Me.PayText.Name = "PayText"
+        Me.PayText.Size = New System.Drawing.Size(61, 19)
+        Me.PayText.TabIndex = 34
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(436, 142)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(17, 12)
+        Me.Label17.TabIndex = 36
+        Me.Label17.Text = "円"
+        '
         'ProductRegisterForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(564, 441)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.PayText)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.CompanyText)
         Me.Controls.Add(Me.GridView)
         Me.Controls.Add(Me.CountComboBox)
         Me.Controls.Add(Me.Table)
@@ -430,4 +483,9 @@ Partial Class ProductRegisterForm
     Friend WithEvents Cell_Count As DataGridViewTextBoxColumn
     Friend WithEvents Cell_Arrival As DataGridViewTextBoxColumn
     Friend WithEvents Cell_Delete As DataGridViewTextBoxColumn
+    Friend WithEvents CompanyText As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents PayText As TextBox
+    Friend WithEvents Label17 As Label
 End Class

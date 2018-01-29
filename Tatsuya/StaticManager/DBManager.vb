@@ -45,7 +45,7 @@
                 record.AddNew()
                 record.Fields("ビデオ番号").Value = video.id
                 record.Fields("タイトル").Value = video.title
-                record.Fields("販売元").Value = video.purchace_company
+                record.Fields("販売元").Value = video.company
                 record.Fields("購入日").Value = video.purchace_day
                 record.Fields("価格").Value = video.pay
 
@@ -61,6 +61,41 @@
             MsgBox("データの保存に失敗しました")
             Application.Exit()
         End Try
+
+        CloseDatabese()
+    End Sub
+
+    Public Shared Sub SaveVideos(videos As List(Of Video))
+        OpenDatabase("ビデオ管理")
+
+        For Each video In videos
+            Dim genre = video.id.Substring(0, 2)
+            Dim count = video.id.Substring(2, 2)
+
+            record.AddNew()
+            For i = 0 To 100
+                Dim isTapled = False
+                Dim id = String.Format("{0:D2}", i)
+                id = genre & i & count
+                record.Fields("ビデオ番号").Value = id
+                record.Fields("タイトル").Value = video.title
+                record.Fields("販売元").Value = video.company
+                record.Fields("購入日").Value = video.purchace_day
+                record.Fields("価格").Value = video.pay
+                Try
+                    record.Update()
+                Catch ex As Exception
+                    isTapled = True
+                End Try
+
+                If Not isTapled Then
+                    Exit For
+                ElseIf i = 100 Then
+                    MsgBox("データの保存に失敗しました")
+                    Application.Exit()
+                End If
+            Next
+        Next
 
         CloseDatabese()
     End Sub
@@ -171,7 +206,42 @@
                 )
         End Select
 
-        Fetch = obj
         CloseDatabese()
+        Fetch = obj
+    End Function
+
+    Public Shared Function FetchIdentity(identity As String, state As String, name As String) As User
+        Dim sql = "select * from 会員管理 where 身分証明書番号 = '" & identity & "' and 身分証明書種別 = '" & state & "' and 氏名 = '" & name & "'"
+        OpenDatabase(sql)
+        Dim obj = Nothing
+        Try
+            obj = New User(
+            record.Fields("会員番号").Value,
+            record.Fields("氏名").Value,
+            record.Fields("性別").Value,
+            record.Fields("生年月日").Value,
+            record.Fields("入会日").Value,
+            record.Fields("電話番号").Value,
+            record.Fields("郵便番号").Value,
+            record.Fields("住所").Value,
+            record.Fields("身分証明書種別").Value,
+            record.Fields("身分証明書番号").Value
+        )
+        Catch ex As Exception
+            MsgBox("その番号は存在しません")
+            FetchIdentity = obj
+        End Try
+
+        CloseDatabese()
+        FetchIdentity = obj
+    End Function
+
+    Public Shared Function GetLastNumber() As Integer
+        Dim sql = "select 会員番号 from 会員管理"
+        OpenDatabase(sql)
+        record.MoveLast()
+        Dim last = record.Fields("会員番号").Value
+        CloseDatabese()
+        GetLastNumber = CInt(last) + 1
     End Function
 End Class

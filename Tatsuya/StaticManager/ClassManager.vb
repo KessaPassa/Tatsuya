@@ -58,15 +58,15 @@ End Class
 Public Class Video
     Property id As String
     Property title As String
-    Property purchace_company As String
+    Property company As String
     Property purchace_day As Date
     Property pay As Integer
 
-    Sub New(id As String, title As String, purchace_company As String, purchace_day As Date, pay As Integer)
+    Sub New(id As String, title As String, company As String, purchace_day As Date, pay As Integer)
 
         Me.id = id
         Me.title = title
-        Me.purchace_company = purchace_company
+        Me.company = company
         Me.purchace_day = purchace_day
         Me.pay = pay
     End Sub

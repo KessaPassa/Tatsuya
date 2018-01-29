@@ -51,7 +51,7 @@
     Private Sub VideoNumber_KeyUp(sender As Object, e As KeyEventArgs)
 
         Dim videoId As String = sender.Text
-        If videoId.Length = 4 Then
+        If videoId.Length = 6 Then
             Dim video As Video = DBManager.Fetch(videoId, DBManager.Type.video)
             If video Is Nothing Then
                 sender.Text = ""
@@ -208,7 +208,7 @@
     Public Shared Function CreateTextBox() As TextBox
 
         Dim textBox = New TextBox
-        textBox.MaxLength = 4
+        textBox.MaxLength = 6
         'textBox.AutoSize = True
         textBox.Anchor = AnchorStyles.Bottom And AnchorStyles.Left And AnchorStyles.Right And AnchorStyles.Top
         textBox.TextAlign = HorizontalAlignment.Center

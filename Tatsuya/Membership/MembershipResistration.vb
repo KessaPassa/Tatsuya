@@ -26,19 +26,19 @@
 
         Dim birthday As String = Year.SelectedItem.ToString + "年" + Month.SelectedItem.ToString + "月" + Day.SelectedItem.ToString + "日"
 
-        '同一のIDが生成されないようにする
-        Dim seed As Integer = Environment.TickCount
-        Dim randomId As String
-        Do
-            seed += 1
-            Dim r As Random = New Random(seed)
-            Dim random As Integer = r.Next(100000)
-            randomId = String.Format("{0:D6}", random)
-        Loop While DBManager.IsExitId(randomId, DBManager.Type.user)
-
+        ''同一のIDが生成されないようにする
+        'Dim seed As Integer = Environment.TickCount
+        'Dim randomId As String
+        'Do
+        '    seed += 1
+        '    Dim r As Random = New Random(seed)
+        '    Dim random As Integer = r.Next(100000)
+        '    randomId = String.Format("{0:D6}", random)
+        'Loop While DBManager.IsExitId(randomId, DBManager.Type.user)
+        Dim id = String.Format("{0:D6}", DBManager.GetLastNumber())
 
         Dim user = New User(
-            randomId, UserName.Text, jender,
+            id, UserName.Text, jender,
             New Date(Year.SelectedItem.ToString, Month.SelectedItem.ToString, Day.SelectedItem.ToString),
             Date.Today, Tel1.Text + "-" + Tel2.Text + "-" + Tel3.Text, AddressNumber.Text,
             AddressContent.Text, IdentityNumber.Text, IdentityState.SelectedItem

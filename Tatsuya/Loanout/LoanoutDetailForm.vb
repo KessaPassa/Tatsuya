@@ -1,11 +1,13 @@
 ﻿Public Class LoanoutDetailForm
 
+    'Dim loanouts As List(Of Loanout) = New List(Of Loanout)
+
     Public Enum ColumnName
         video
         title
         limitedAge
         nowDay
-        loanoutDay
+        days
         returnDay
         pay
         delete
@@ -29,6 +31,17 @@
 
         '注意メッセージがないなら完了
         If MessageLabel.Text = "" Then
+            Dim loanouts = New List(Of Loanout)
+            For i = 1 To TableLayoutPanel.RowCount - 2
+                Dim days = CType(Cell(ColumnName.days, i), ComboBox).SelectedItem
+                For Each item In Provision.GetLendDays()
+                    If days = item.days Then
+                        days = item.limit
+                    End If
+                Next
+                Dim loanout = New Loanout(IdentityNuber.Text, Cell(ColumnName.video, i).Text, Cell(ColumnName.nowDay, i).Text, days)
+                DBManager.Save(loanout, DBManager.Type.loanout)
+            Next
             MsgBox("貸し出し処理完了しました")
             MainForm.Show()
             Close()
@@ -93,13 +106,13 @@
             End If
         Next
 
-        Dim countColumn = ColumnName.loanoutDay
+        Dim countColumn = ColumnName.days
         Cell(countColumn, TableLayoutPanel.RowCount - 1).Text = sum
     End Sub
 
     Private Sub LoanoutDay_SelectedIndexChanged(sender As Object, e As EventArgs)
 
-        Dim text = Cell(ColumnName.loanoutDay).SelectedItem
+        Dim text = Cell(ColumnName.days).SelectedItem
         Dim lendData = Provision.GetLendDays
         For i = 0 To lendData.GetLength(0) - 1
             If text = lendData(i).days Then
@@ -112,7 +125,9 @@
         Dim column As ColumnName = ColumnName.pay
         For i = 1 To TableLayoutPanel.RowCount - 2
             Dim payLabel = CType(TableLayoutPanel.GetControlFromPosition(CType(column, Integer), i), Label)
-            sum += CType(payLabel.Text, Integer)
+            If Not payLabel.Text = "" Then
+                sum += CType(payLabel.Text, Integer)
+            End If
         Next
         Cell(column, TableLayoutPanel.RowCount - 1).Text = sum
     End Sub

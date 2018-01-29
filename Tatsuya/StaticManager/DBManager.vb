@@ -52,6 +52,11 @@
             Case Type.loanout
                 Dim loanout = CType(obj, Loanout)
                 OpenDatabase("貸出管理")
+                record.AddNew()
+                record.Fields("会員番号").Value = loanout.user_id
+                record.Fields("ビデオ番号").Value = loanout.video_id
+                record.Fields("貸出日").Value = loanout.that_date
+                record.Fields("貸出日数").Value = loanout.days
 
         End Select
 

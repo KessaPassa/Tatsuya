@@ -11,7 +11,7 @@
             Exit Sub
         End If
 
-        Dim loanout As Loanout = DBManager.Fetch(id, DBManager.Type.loanout)
+        Dim loanout As Loanout = DBManager.FetchLoanout(id)
         If loanout Is Nothing Then
             VideoId.Text = ""
             Exit Sub

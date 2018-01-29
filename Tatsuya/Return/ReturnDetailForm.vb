@@ -1,6 +1,9 @@
 ﻿Public Class ReturnDetailForm
 
+    Dim loanout As Loanout
+
     Public Overloads Sub Show(loanout As Loanout)
+        Me.loanout = loanout
         VideoIdGroupBox.Text = "ビデオID: " & loanout.video_id
         IdentityNumber.Text = loanout.user_id
         UserName.Text = loanout.ConvertUser().name
@@ -31,6 +34,7 @@
 
         Dim result As DialogResult = MessageBox.Show(message, title, MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
+            DBManager.Delete(loanout.user_id, DBManager.Type.loanout)
             MsgBox("返却完了" & Environment.NewLine & "----" & Environment.NewLine & VideoIdGroupBox.Text, MsgBoxStyle.OkOnly, "返却処理終了")
             MainForm.Show()
             Close()

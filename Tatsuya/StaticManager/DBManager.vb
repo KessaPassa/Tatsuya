@@ -112,6 +112,9 @@
             Case Type.user
                 sql = "select * from 会員管理 where 会員番号 = '" & id & "'"
 
+            Case Type.loanout
+                sql = "select * from 貸出管理 where 会員番号 = '" & id & "'"
+
             Case Else
                 Exit Sub
         End Select
@@ -201,7 +204,7 @@
 )
 
             Case Type.loanout
-                Dim sql = "select * from 貸出管理 where 会員番号 = '" & id & "'"
+                Dim sql = "select * from 貸出管理 where ビデオ番号 = '" & id & "'"
                 OpenDatabase(sql)
                 obj = New Loanout(
                     record.Fields("会員番号").Value,
@@ -239,6 +242,19 @@
 
         CloseDatabese()
         FetchIdentity = obj
+    End Function
+
+    Public Shared Function FetchLoanout(videoId As String)
+        Dim sql = "select * from 貸出管理 where ビデオ番号 = '" & videoId & "'"
+        OpenDatabase(sql)
+        Dim obj = New Loanout(
+            record.Fields("会員番号").Value,
+            record.Fields("ビデオ番号").Value,
+            record.Fields("貸出日").Value,
+            record.Fields("貸出日数").Value
+        )
+        CloseDatabese()
+        FetchLoanout = obj
     End Function
 
     Public Shared Function GetLastNumber() As Integer
